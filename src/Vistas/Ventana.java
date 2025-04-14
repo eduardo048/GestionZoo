@@ -909,10 +909,20 @@ public class Ventana extends javax.swing.JFrame {
         jLabelTitulozooDeDatosHabitat.setText("Modificar los datos del Habitat");
 
         jButtonEditarHabitat.setFont(new java.awt.Font("Segoe Script", 3, 12)); // NOI18N
-        jButtonEditarHabitat.setText("Editar Habitat");
+        jButtonEditarHabitat.setText("Modificar Habitat");
+        jButtonEditarHabitat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEditarHabitatActionPerformed(evt);
+            }
+        });
 
         jButtonEliminarHabitat.setFont(new java.awt.Font("Segoe Script", 3, 12)); // NOI18N
         jButtonEliminarHabitat.setText("Eliminar Habitat");
+        jButtonEliminarHabitat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEliminarHabitatActionPerformed(evt);
+            }
+        });
 
         jComboBoxVerHabitat.setFont(new java.awt.Font("Segoe Script", 3, 12)); // NOI18N
         jComboBoxVerHabitat.addActionListener(new java.awt.event.ActionListener() {
@@ -968,28 +978,26 @@ public class Ventana extends javax.swing.JFrame {
                     .addGroup(jPanelIntroducirDatosAnimales2Layout.createSequentialGroup()
                         .addGap(13, 13, 13)
                         .addGroup(jPanelIntroducirDatosAnimales2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelNombreHabitat1, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelTextoClima1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelTextoTamaño1)
+                            .addComponent(jLabelTextoCapacidad1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelAnimalesHabitat1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanelIntroducirDatosAnimales2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanelIntroducirDatosAnimales2Layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(jButtonEliminarHabitat)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButtonEditarHabitat, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanelIntroducirDatosAnimales2Layout.createSequentialGroup()
-                                .addGroup(jPanelIntroducirDatosAnimales2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabelNombreHabitat1, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabelTextoClima1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabelTextoTamaño1)
-                                    .addComponent(jLabelTextoCapacidad1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabelAnimalesHabitat1))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanelIntroducirDatosAnimales2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanelIntroducirDatosAnimales2Layout.createSequentialGroup()
-                                        .addGap(171, 171, 171)
-                                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jTextFieldVerClimaHabitat, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextFieldVerNombreHabitat, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextFieldVerTamañoHabitat, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jSpinnerVerNumeroDeAnimalesHabitat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextFieldVerCapacidadHabitat, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                .addGap(171, 171, 171)
+                                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTextFieldVerClimaHabitat, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldVerNombreHabitat, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldVerTamañoHabitat, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jSpinnerVerNumeroDeAnimalesHabitat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldVerCapacidadHabitat, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanelIntroducirDatosAnimales2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButtonEliminarHabitat)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButtonEditarHabitat)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelIntroducirDatosAnimales2Layout.setVerticalGroup(
@@ -1636,11 +1644,6 @@ public class Ventana extends javax.swing.JFrame {
         
         this.jComboBoxAnimalesParaModificar.removeItemAt(indice);
         this.jComboBoxAnimalesParaModificar.addItem(nombreAnimalNuevo);
-        
-        
-        
-        
-        
         }
     }//GEN-LAST:event_jButtonModificarAnimalActionPerformed
 
@@ -1876,6 +1879,50 @@ public class Ventana extends javax.swing.JFrame {
             this.jLabelEstado.setText("Datos del habitat mostrado");
         }
     }//GEN-LAST:event_jComboBoxVerHabitatActionPerformed
+
+    private void jButtonEditarHabitatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditarHabitatActionPerformed
+        String nombreHabitat=(String)this.jComboBoxVerHabitat.getSelectedItem();
+        int indice=this.jComboBoxVerHabitat.getSelectedIndex();
+        Habitat buscado=this.miZoo.buscarHabitat(nombreHabitat);
+        if(buscado==null){
+            this.jLabelEstado.setText("No hay un habitat a modificar");
+        }else{
+        String nombreHabitatNuevo=this.jTextFieldVerNombreHabitat.getText();
+        buscado.setNombre(nombreHabitatNuevo);
+        String climaHabitatNuevo=this.jTextFieldVerClimaHabitat.getText();
+        buscado.setClima(climaHabitatNuevo);
+        int tamañoHabitatNuevo=Integer.parseInt(this.jTextFieldVerTamañoHabitat.getText());
+        buscado.setTamaño(tamañoHabitatNuevo);
+        int capacidadHabitatNuevo=Integer.parseInt(this.jTextFieldVerCapacidadHabitat.getText());
+        buscado.setCapacidad(capacidadHabitatNuevo);
+        int numeroAnimalesNuevo= (int) this.jSpinnerVerNumeroDeAnimalesHabitat.getValue();
+        buscado.setNumeroAnimales(numeroAnimalesNuevo);
+        this.jLabelEstado.setText("El habitat se ha modificado");
+        
+        this.jComboBoxVerHabitat.removeItemAt(indice);
+        this.jComboBoxVerHabitat.addItem(nombreHabitatNuevo);
+        }
+    }//GEN-LAST:event_jButtonEditarHabitatActionPerformed
+
+    private void jButtonEliminarHabitatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminarHabitatActionPerformed
+       String nombreHabitat = (String) this.jComboBoxVerHabitat.getSelectedItem();
+        
+        if(nombreHabitat==null){
+            this.jLabelEstado.setText("El habitat no se puedo eliminar");
+        }else{
+            this.miZoo.eliminarHabitat(nombreHabitat);
+            
+            this.jComboBoxVerHabitat.removeItem(nombreHabitat);
+            
+            this.jTextFieldVerNombreHabitat.setText("");
+            this.jTextFieldVerClimaHabitat.setText("");
+            this.jTextFieldVerTamañoHabitat.setText("");
+            this.jTextFieldVerCapacidadHabitat.setText("");
+            this.jSpinnerVerNumeroDeAnimalesHabitat.setValue(0);
+            this.jLabelEstado.setText("El habitat " + nombreHabitat + " se elimino correctamente");
+            
+        }
+    }//GEN-LAST:event_jButtonEliminarHabitatActionPerformed
 
     
     /**

@@ -57,6 +57,7 @@ public class Zoo  implements Serializable {
                "Ciudad del zoo: " + this.ciudad + "\n";
         
         texto += this.animales.toString();
+        texto += this.habitats.toString();
         return texto;
     }
     

@@ -1539,34 +1539,30 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                                          <Component id="jButtonEliminarHabitat" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jButtonEditarHabitat" min="-2" pref="130" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabelNombreHabitat1" alignment="0" min="-2" pref="58" max="-2" attributes="0"/>
-                                              <Component id="jLabelTextoClima1" alignment="0" min="-2" pref="52" max="-2" attributes="0"/>
-                                              <Component id="jLabelTextoTamaño1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabelTextoCapacidad1" alignment="0" min="-2" pref="83" max="-2" attributes="0"/>
-                                              <Component id="jLabelAnimalesHabitat1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" attributes="0">
-                                                  <EmptySpace min="-2" pref="171" max="-2" attributes="0"/>
-                                                  <Component id="jLabel13" min="-2" pref="179" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Component id="jTextFieldVerClimaHabitat" min="-2" pref="163" max="-2" attributes="0"/>
-                                              <Component id="jTextFieldVerNombreHabitat" min="-2" pref="163" max="-2" attributes="0"/>
-                                              <Component id="jTextFieldVerTamañoHabitat" min="-2" pref="163" max="-2" attributes="0"/>
-                                              <Component id="jSpinnerVerNumeroDeAnimalesHabitat" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jTextFieldVerCapacidadHabitat" alignment="0" min="-2" pref="165" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
+                                      <Component id="jLabelNombreHabitat1" alignment="0" min="-2" pref="58" max="-2" attributes="0"/>
+                                      <Component id="jLabelTextoClima1" alignment="0" min="-2" pref="52" max="-2" attributes="0"/>
+                                      <Component id="jLabelTextoTamaño1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabelTextoCapacidad1" alignment="0" min="-2" pref="83" max="-2" attributes="0"/>
+                                      <Component id="jLabelAnimalesHabitat1" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="-2" pref="171" max="-2" attributes="0"/>
+                                          <Component id="jLabel13" min="-2" pref="179" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="jTextFieldVerClimaHabitat" min="-2" pref="163" max="-2" attributes="0"/>
+                                      <Component id="jTextFieldVerNombreHabitat" min="-2" pref="163" max="-2" attributes="0"/>
+                                      <Component id="jTextFieldVerTamañoHabitat" min="-2" pref="163" max="-2" attributes="0"/>
+                                      <Component id="jSpinnerVerNumeroDeAnimalesHabitat" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jTextFieldVerCapacidadHabitat" alignment="0" min="-2" pref="165" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jButtonEliminarHabitat" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jButtonEditarHabitat" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
@@ -1645,8 +1641,11 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe Script" size="12" style="3"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Editar Habitat"/>
+                    <Property name="text" type="java.lang.String" value="Modificar Habitat"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonEditarHabitatActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel13">
                 </Component>
@@ -1657,6 +1656,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Eliminar Habitat"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonEliminarHabitatActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JComboBox" name="jComboBoxVerHabitat">
                   <Properties>
