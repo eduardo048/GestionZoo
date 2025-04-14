@@ -1089,6 +1089,11 @@ public class Ventana extends javax.swing.JFrame {
 
         jButtonCrearPersonal.setFont(new java.awt.Font("Segoe Script", 3, 12)); // NOI18N
         jButtonCrearPersonal.setText("Crear Personal");
+        jButtonCrearPersonal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCrearPersonalActionPerformed(evt);
+            }
+        });
 
         jTextFieldNombrePersonal.setFont(new java.awt.Font("Segoe Script", 3, 12)); // NOI18N
         jTextFieldNombrePersonal.setForeground(new java.awt.Color(0, 0, 0));
@@ -1923,6 +1928,33 @@ public class Ventana extends javax.swing.JFrame {
             
         }
     }//GEN-LAST:event_jButtonEliminarHabitatActionPerformed
+
+    private void jButtonCrearPersonalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCrearPersonalActionPerformed
+        String nombrePersonal = this.jTextFieldNombrePersonal.getText();
+        String horario = this.jTextFieldClimaHabitat.getText();
+        int sueldo = Integer.parseInt(this.jTextFieldTamañoHabitat.getText());
+        int extra = Integer.parseInt(this.jTextFieldCapacidadHabitat.getText());
+        
+        
+         /*Habitat nuevoHabitat = new Habitat(nombreHabitat, clima, tamaño, capacidad, numeroAnimales);
+        this.miZoo.añadirHabitat(nuevoHabitat);
+        
+        if(this.miZoo==null){
+            this.jLabelEstado.setText("Aun no se ha creado el habitat.");
+        }else{
+             this.miZoo.añadirHabitat(nuevoHabitat);
+            this.jLabelEstado.setText("Se ha añadido el habitat ya");
+            
+            //Tengo que crear el combobox par añadir el habitat en lo de modificar
+            this.jComboBoxVerHabitat.addItem(nombreHabitat);
+            //limpiar todo
+            this.jTextFieldNombreHabitat.setText("");
+            this.jTextFieldClimaHabitat.setText("");
+            this.jTextFieldTamañoHabitat.setText("");
+            this.jTextFieldCapacidadHabitat.setText("");
+            this.jSpinnerNumeroDeAnimalesHabitat.setValue(0);
+        }*/
+    }//GEN-LAST:event_jButtonCrearPersonalActionPerformed
 
     
     /**

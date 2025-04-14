@@ -4,13 +4,14 @@
  */
 package Modelos;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author eduar
  */
-public class Habitat {
+public class Habitat implements Serializable {
     private String nombre;
     private String clima;
     private int tamaño;

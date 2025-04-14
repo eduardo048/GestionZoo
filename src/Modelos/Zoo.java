@@ -10,6 +10,7 @@ public class Zoo  implements Serializable {
     private String ciudad;
     private ArrayList<Animal> animales;
     private ArrayList<Habitat> habitats;
+    private ArrayList<Personal> personal;
     
     //Constructor vacio
     public Zoo() {
@@ -22,6 +23,7 @@ public class Zoo  implements Serializable {
         this.ciudad = ciudad;
         this.animales=new ArrayList<Animal>();
         this.habitats = new ArrayList<Habitat>();
+        this.personal = new ArrayList<Personal>();
     }
     
     //Setters and Getters
@@ -111,13 +113,40 @@ public class Zoo  implements Serializable {
     //Eliminar habitat
     public void eliminarHabitat(String nombreHabitat){
         for(int i=0; i<habitats.size(); i++){
-            if(habitats.get(i).getNombre().equalsIgnoreCase(nombreZoo)){
+            if(habitats.get(i).getNombre().equalsIgnoreCase(nombreHabitat)){
                 habitats.remove(i);
                 return;
             }
         }
     }
     
+    //Todo sobre el personal
+    
+    //Añadir personal
+    public void añadirPersonal(Personal nuevo){
+        this.personal.add(nuevo);
+    }
+    
+    //Buscar Personal
+    public Personal buscarPersonal(String nombrePersona){
+        Personal buscado=null;
+        for(Personal personal : this.personal){
+            if(personal.getNombre().equalsIgnoreCase(nombrePersona)){
+                buscado = personal;
+            }
+        }
+        return buscado;
+    }
+    
+    //Eliminar personal
+    public void eliminarPersonal(String nombrePersona){
+        for(int i=0; i<personal.size(); i++){
+            if(personal.get(i).getNombre().equalsIgnoreCase(nombrePersona)){
+                personal.remove(i);
+                return;            
+            }          
+        }
+    }
     
     
     
