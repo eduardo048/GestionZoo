@@ -9,6 +9,7 @@ public class Zoo  implements Serializable {
     private int superficie;
     private String ciudad;
     private ArrayList<Animal> animales;
+    private ArrayList<Habitat> habitats;
     
     //Constructor vacio
     public Zoo() {
@@ -20,6 +21,7 @@ public class Zoo  implements Serializable {
         this.superficie = superficie;
         this.ciudad = ciudad;
         this.animales=new ArrayList<Animal>();
+        this.habitats = new ArrayList<Habitat>();
     }
     
     //Setters and Getters
@@ -75,5 +77,48 @@ public class Zoo  implements Serializable {
             }
         }
         return buscado;  
-    }     
+    } 
+
+    //Eliminar un animal
+    public void eliminarAnimal(String nombreAnimal){  
+        for(int i=0; i<animales.size(); i++){
+            if(animales.get(i).getNombreAnimal().equalsIgnoreCase(nombreAnimal)){
+                animales.remove(i);
+                return;
+            }
+        }
+    }
+    
+    //Todo sobre los habitat
+    
+    //Añadir un habitat
+    public void añadirHabitat(Habitat nuevo){
+        this.habitats.add(nuevo);
+    }
+    
+    //Buscar habitat
+    public Habitat buscarHabitat(String nombreHabitat){
+        Habitat buscado=null;
+        for(Habitat habitat : this.habitats){
+            if(habitat.getNombre().equalsIgnoreCase(nombreZoo)){
+                buscado=habitat;
+            }
+        }
+        return buscado;
+    }
+    
+    //Eliminar habitat
+    public void eliminarHabitat(String nombreHabitat){
+        for(int i=0; i<habitats.size(); i++){
+            if(habitats.get(i).getNombre().equalsIgnoreCase(nombreZoo)){
+                habitats.remove(i);
+                return;
+            }
+        }
+    }
+    
+    
+    
+    
+    
 }
