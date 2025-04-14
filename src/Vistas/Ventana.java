@@ -1740,27 +1740,6 @@ public class Ventana extends javax.swing.JFrame {
         this.jComboBoxVerCiudadZoo.setSelectedItem(this.miZoo.getCiudad());
     }//GEN-LAST:event_jButtonCrearZooBotonActionPerformed
 
-    private void jComboBoxAnimalesParaModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxAnimalesParaModificarActionPerformed
-        String nombreAnimal=(String) this.jComboBoxAnimalesParaModificar.getSelectedItem();
-        Animal buscado=this.miZoo.buscarAnimal(nombreAnimal);
-        if(buscado==null){
-            this.jLabelEstado.setText("No se encontro ningun animal");
-        }else{
-            this.jTextFieldModificarNombreAnimal.setText(buscado.getNombreAnimal());
-            this.jTextFieldModficarEspecieAnimal.setText(buscado.getEspecie());
-            this.jTextFieldModificarEdadAnimal.setText(Integer.toString(buscado.getEdad()));
-            this.jTextFieldModificarAlimentacionAnimal.setText(buscado.getAlimentacion());
-            
-            String rutaImagen = "/Vistas/Imagenes/" + buscado.getImagen();
-            ImageIcon img;
-            Icon imagen;
-            img = new ImageIcon(getClass().getResource(rutaImagen));
-            imagen = new ImageIcon(img.getImage().getScaledInstance(this.jLabelVerImagenAnimal.getWidth(), this.jLabelVerImagenAnimal.getHeight(), Image.SCALE_DEFAULT));
-            this.jLabelVerImagenAnimal.setIcon(imagen);
-            this.jLabelEstado.setText("Datos del animal mostrado");
-        }
-    }//GEN-LAST:event_jComboBoxAnimalesParaModificarActionPerformed
-
     private void jButtonEliminarAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminarAnimalActionPerformed
         String nombreAnimal = (String) this.jComboBoxAnimalesParaModificar.getSelectedItem();
         
@@ -1835,23 +1814,8 @@ public class Ventana extends javax.swing.JFrame {
         this.jTextFieldVerExtraEmpleado.setVisible(true);
     }//GEN-LAST:event_jRadioButtonVerLimpiadorPersonalMousePressed
 
-    private void jComboBoxVerHabitatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxVerHabitatActionPerformed
-        String nombreHabitat=(String) this.jComboBoxAnimalesParaModificar.getSelectedItem();
-        Habitat buscado=this.miZoo.buscarHabitat(nombreHabitat);
-        if(buscado==null){
-            this.jLabelEstado.setText("No se encontro ningun habitat");
-        }else{
-            this.jTextFieldVerNombreHabitat.setText(buscado.getNombre());
-            this.jTextFieldVerClimaHabitat.setText(buscado.getClima());
-            this.jTextFieldVerTamañoHabitat.setText(Integer.toString(buscado.getTamaño()));
-            this.jTextFieldVerCapacidadHabitat.setText(Integer.toString(buscado.getCapacidad()));
-            this.jSpinnerNumeroDeAnimalesHabitat.setValue(buscado.getNumeroAnimales());
-            this.jLabelEstado.setText("Datos del habitat mostrado");
-        }
-    }//GEN-LAST:event_jComboBoxVerHabitatActionPerformed
-
     private void jButtonCrearHabitatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCrearHabitatActionPerformed
-        String nombreHabitat = this.jTextFieldNombreHabitat.getText();
+            String nombreHabitat = this.jTextFieldNombreHabitat.getText();
         String clima = this.jTextFieldClimaHabitat.getText();
         int tamaño = Integer.parseInt(this.jTextFieldTamañoHabitat.getText());
         int capacidad = Integer.parseInt(this.jTextFieldCapacidadHabitat.getText());
@@ -1873,10 +1837,45 @@ public class Ventana extends javax.swing.JFrame {
             this.jTextFieldClimaHabitat.setText("");
             this.jTextFieldTamañoHabitat.setText("");
             this.jTextFieldCapacidadHabitat.setText("");
-            this.jSpinnerNumeroDeAnimalesHabitat.setValue("");
-            
+            this.jSpinnerNumeroDeAnimalesHabitat.setValue(0);
         }
     }//GEN-LAST:event_jButtonCrearHabitatActionPerformed
+
+    private void jComboBoxAnimalesParaModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxAnimalesParaModificarActionPerformed
+        String nombreAnimal=(String) this.jComboBoxAnimalesParaModificar.getSelectedItem();
+        Animal buscado=this.miZoo.buscarAnimal(nombreAnimal);
+        if(buscado==null){
+            this.jLabelEstado.setText("No se encontro ningun animal");
+        }else{
+            this.jTextFieldModificarNombreAnimal.setText(buscado.getNombreAnimal());
+            this.jTextFieldModficarEspecieAnimal.setText(buscado.getEspecie());
+            this.jTextFieldModificarEdadAnimal.setText(Integer.toString(buscado.getEdad()));
+            this.jTextFieldModificarAlimentacionAnimal.setText(buscado.getAlimentacion());
+            
+            String rutaImagen = "/Vistas/Imagenes/" + buscado.getImagen();
+            ImageIcon img;
+            Icon imagen;
+            img = new ImageIcon(getClass().getResource(rutaImagen));
+            imagen = new ImageIcon(img.getImage().getScaledInstance(this.jLabelVerImagenAnimal.getWidth(), this.jLabelVerImagenAnimal.getHeight(), Image.SCALE_DEFAULT));
+            this.jLabelVerImagenAnimal.setIcon(imagen);
+            this.jLabelEstado.setText("Datos del animal mostrado");
+        }
+    }//GEN-LAST:event_jComboBoxAnimalesParaModificarActionPerformed
+
+    private void jComboBoxVerHabitatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxVerHabitatActionPerformed
+        String nombreHabitat=(String) this.jComboBoxVerHabitat.getSelectedItem();
+        Habitat buscado=this.miZoo.buscarHabitat(nombreHabitat);
+        if(buscado==null){
+            this.jLabelEstado.setText("No se encontro ningun habitat");
+        }else{
+            this.jTextFieldVerNombreHabitat.setText(buscado.getNombre());
+            this.jTextFieldVerClimaHabitat.setText(buscado.getClima());
+            this.jTextFieldVerTamañoHabitat.setText(Integer.toString(buscado.getTamaño()));
+            this.jTextFieldVerCapacidadHabitat.setText(Integer.toString(buscado.getCapacidad()));
+            this.jSpinnerVerNumeroDeAnimalesHabitat.setValue(buscado.getNumeroAnimales());
+            this.jLabelEstado.setText("Datos del habitat mostrado");
+        }
+    }//GEN-LAST:event_jComboBoxVerHabitatActionPerformed
 
     
     /**

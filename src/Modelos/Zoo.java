@@ -100,7 +100,7 @@ public class Zoo  implements Serializable {
     public Habitat buscarHabitat(String nombreHabitat){
         Habitat buscado=null;
         for(Habitat habitat : this.habitats){
-            if(habitat.getNombre().equalsIgnoreCase(nombreZoo)){
+            if(habitat.getNombre().equalsIgnoreCase(nombreHabitat)){
                 buscado=habitat;
             }
         }
