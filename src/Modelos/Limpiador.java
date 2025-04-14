@@ -16,7 +16,7 @@ public class Limpiador extends Personal implements Serializable{
     public Limpiador() {
     }
 
-    public Limpiador(String area, String nombre, String horario, double sueldo) {
+    public Limpiador( String nombre, String horario, double sueldo, String area) {
         super(nombre, horario, sueldo);
         this.area = area;
     }

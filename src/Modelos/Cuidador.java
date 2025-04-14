@@ -16,7 +16,7 @@ public class Cuidador extends Personal implements Serializable {
     public Cuidador() {
     }
 
-    public Cuidador(int experiencia, String nombre, String horario, double sueldo) {
+    public Cuidador( String nombre, String horario, double sueldo, int experiencia) {
         super(nombre, horario, sueldo);
         this.experiencia = experiencia;
     }

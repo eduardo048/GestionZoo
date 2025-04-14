@@ -16,7 +16,7 @@ public class Administrativo extends Personal implements Serializable {
     public Administrativo() {
     }
 
-    public Administrativo(String departamento, String nombre, String horario, double sueldo) {
+    public Administrativo(String nombre, String horario, double sueldo, String departamento) {
         super(nombre, horario, sueldo);
         this.departamento = departamento;
     }

@@ -60,6 +60,7 @@ public class Zoo  implements Serializable {
         
         texto += this.animales.toString();
         texto += this.habitats.toString();
+        texto += this.personal.toString();
         return texto;
     }
     

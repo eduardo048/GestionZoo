@@ -16,7 +16,7 @@ public class Guia extends Personal implements Serializable {
     public Guia() {
     }
 
-    public Guia(String idioma, String nombre, String horario, double sueldo) {
+    public Guia( String nombre, String horario, double sueldo, String idioma) {
         super(nombre, horario, sueldo);
         this.idioma = idioma;
     }

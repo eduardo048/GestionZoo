@@ -5,9 +5,14 @@
 package Vistas;
 
 import Controladores.Archivos;
+import Modelos.Administrativo;
 import Modelos.Zoo;
 import Modelos.Animal;
+import Modelos.Cuidador;
+import Modelos.Guia;
 import Modelos.Habitat;
+import Modelos.Limpiador;
+import Modelos.Personal;
 import java.awt.Image;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -136,10 +141,10 @@ public class Ventana extends javax.swing.JFrame {
         jButtonCrearPersonal = new javax.swing.JButton();
         jTextFieldNombrePersonal = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
-        jTextFieldTamañoHabitat1 = new javax.swing.JTextField();
+        jTextFieldSalarioPersonal = new javax.swing.JTextField();
         jRadioButtonTarde = new javax.swing.JRadioButton();
         jRadioButtonNoche = new javax.swing.JRadioButton();
-        jRadioButtonMañana2 = new javax.swing.JRadioButton();
+        jRadioButtonMañana = new javax.swing.JRadioButton();
         jRadioButtonAdministrativoPersonal = new javax.swing.JRadioButton();
         jRadioButtonCuidadorPerosnal = new javax.swing.JRadioButton();
         jRadioButtonGuiaPersonal = new javax.swing.JRadioButton();
@@ -160,11 +165,11 @@ public class Ventana extends javax.swing.JFrame {
         jRadioButtonVerNoche = new javax.swing.JRadioButton();
         jRadioButtonVerMañana = new javax.swing.JRadioButton();
         jLabelTextoTamaño4 = new javax.swing.JLabel();
-        jTextFieldVerSalarioPerosnal = new javax.swing.JTextField();
+        jTextFieldVerSalarioPersonal = new javax.swing.JTextField();
         jLabelTextoTamaño5 = new javax.swing.JLabel();
         jRadioButtonVerAdministrativoPersonal = new javax.swing.JRadioButton();
         jRadioButtonVerGuiaPersonal = new javax.swing.JRadioButton();
-        jRadioButtonVerCuidadorPerosnal = new javax.swing.JRadioButton();
+        jRadioButtonVerCuidadorPersonal = new javax.swing.JRadioButton();
         jRadioButtonVerLimpiadorPersonal = new javax.swing.JRadioButton();
         jLabelVerEmpleado = new javax.swing.JLabel();
         jTextFieldVerExtraEmpleado = new javax.swing.JTextField();
@@ -1098,8 +1103,8 @@ public class Ventana extends javax.swing.JFrame {
         jTextFieldNombrePersonal.setFont(new java.awt.Font("Segoe Script", 3, 12)); // NOI18N
         jTextFieldNombrePersonal.setForeground(new java.awt.Color(0, 0, 0));
 
-        jTextFieldTamañoHabitat1.setFont(new java.awt.Font("Segoe Script", 3, 12)); // NOI18N
-        jTextFieldTamañoHabitat1.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldSalarioPersonal.setFont(new java.awt.Font("Segoe Script", 3, 12)); // NOI18N
+        jTextFieldSalarioPersonal.setForeground(new java.awt.Color(0, 0, 0));
 
         buttonGroupHorarioPersonal.add(jRadioButtonTarde);
         jRadioButtonTarde.setFont(new java.awt.Font("Segoe Script", 3, 12)); // NOI18N
@@ -1111,10 +1116,10 @@ public class Ventana extends javax.swing.JFrame {
         jRadioButtonNoche.setForeground(new java.awt.Color(0, 0, 0));
         jRadioButtonNoche.setText("Noche");
 
-        buttonGroupHorarioPersonal.add(jRadioButtonMañana2);
-        jRadioButtonMañana2.setFont(new java.awt.Font("Segoe Script", 3, 12)); // NOI18N
-        jRadioButtonMañana2.setForeground(new java.awt.Color(0, 0, 0));
-        jRadioButtonMañana2.setText("Mañana");
+        buttonGroupHorarioPersonal.add(jRadioButtonMañana);
+        jRadioButtonMañana.setFont(new java.awt.Font("Segoe Script", 3, 12)); // NOI18N
+        jRadioButtonMañana.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButtonMañana.setText("Mañana");
 
         buttonGroupTipoDePersonal.add(jRadioButtonAdministrativoPersonal);
         jRadioButtonAdministrativoPersonal.setFont(new java.awt.Font("Segoe Script", 3, 12)); // NOI18N
@@ -1204,7 +1209,7 @@ public class Ventana extends javax.swing.JFrame {
                                         .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jRadioButtonLimpiadorPersonal)))
                             .addGroup(jPanelIntroducirDatosHabitat1Layout.createSequentialGroup()
-                                .addComponent(jRadioButtonMañana2, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jRadioButtonMañana, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanelIntroducirDatosHabitat1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabelTextoClima2, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1217,7 +1222,7 @@ public class Ventana extends javax.swing.JFrame {
                                 .addGap(46, 46, 46)
                                 .addGroup(jPanelIntroducirDatosHabitat1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabelTextoTamaño3, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextFieldTamañoHabitat1, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                    .addComponent(jTextFieldSalarioPersonal, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelIntroducirDatosHabitat1Layout.setVerticalGroup(
@@ -1234,12 +1239,12 @@ public class Ventana extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelIntroducirDatosHabitat1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jRadioButtonTarde)
-                    .addComponent(jRadioButtonMañana2)
+                    .addComponent(jRadioButtonMañana)
                     .addComponent(jRadioButtonNoche))
                 .addGap(21, 21, 21)
                 .addGroup(jPanelIntroducirDatosHabitat1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelTextoTamaño2)
-                    .addComponent(jTextFieldTamañoHabitat1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldSalarioPersonal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanelIntroducirDatosHabitat1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelIntroducirDatosHabitat1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1277,11 +1282,21 @@ public class Ventana extends javax.swing.JFrame {
 
         jButtonEditarPersonal.setFont(new java.awt.Font("Segoe Script", 3, 12)); // NOI18N
         jButtonEditarPersonal.setText("Editar Personal");
+        jButtonEditarPersonal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEditarPersonalActionPerformed(evt);
+            }
+        });
 
         jButtonEliminarPersonal.setFont(new java.awt.Font("Segoe Script", 3, 12)); // NOI18N
         jButtonEliminarPersonal.setText("Eliminar Personal");
 
         jComboBoxVerPersonal.setFont(new java.awt.Font("Segoe Script", 3, 12)); // NOI18N
+        jComboBoxVerPersonal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxVerPersonalActionPerformed(evt);
+            }
+        });
 
         jLabelNombreHabitat3.setFont(new java.awt.Font("Segoe Script", 3, 12)); // NOI18N
         jLabelNombreHabitat3.setForeground(new java.awt.Color(0, 0, 0));
@@ -1313,8 +1328,8 @@ public class Ventana extends javax.swing.JFrame {
         jLabelTextoTamaño4.setForeground(new java.awt.Color(0, 0, 0));
         jLabelTextoTamaño4.setText("Salario");
 
-        jTextFieldVerSalarioPerosnal.setFont(new java.awt.Font("Segoe Script", 3, 12)); // NOI18N
-        jTextFieldVerSalarioPerosnal.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldVerSalarioPersonal.setFont(new java.awt.Font("Segoe Script", 3, 12)); // NOI18N
+        jTextFieldVerSalarioPersonal.setForeground(new java.awt.Color(0, 0, 0));
 
         jLabelTextoTamaño5.setFont(new java.awt.Font("Segoe Script", 3, 12)); // NOI18N
         jLabelTextoTamaño5.setForeground(new java.awt.Color(0, 0, 0));
@@ -1340,13 +1355,13 @@ public class Ventana extends javax.swing.JFrame {
             }
         });
 
-        buttonGroupVerTipoDePersonal.add(jRadioButtonVerCuidadorPerosnal);
-        jRadioButtonVerCuidadorPerosnal.setFont(new java.awt.Font("Segoe Script", 3, 12)); // NOI18N
-        jRadioButtonVerCuidadorPerosnal.setForeground(new java.awt.Color(0, 0, 0));
-        jRadioButtonVerCuidadorPerosnal.setText("Cuidador");
-        jRadioButtonVerCuidadorPerosnal.addMouseListener(new java.awt.event.MouseAdapter() {
+        buttonGroupVerTipoDePersonal.add(jRadioButtonVerCuidadorPersonal);
+        jRadioButtonVerCuidadorPersonal.setFont(new java.awt.Font("Segoe Script", 3, 12)); // NOI18N
+        jRadioButtonVerCuidadorPersonal.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButtonVerCuidadorPersonal.setText("Cuidador");
+        jRadioButtonVerCuidadorPersonal.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                jRadioButtonVerCuidadorPerosnalMousePressed(evt);
+                jRadioButtonVerCuidadorPersonalMousePressed(evt);
             }
         });
 
@@ -1398,7 +1413,7 @@ public class Ventana extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabelTextoTamaño4, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
-                .addComponent(jTextFieldVerSalarioPerosnal, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jTextFieldVerSalarioPersonal, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanelIntroducirDatosAnimales3Layout.createSequentialGroup()
                 .addGap(125, 125, 125)
                 .addComponent(jLabelTextoTamaño5, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1417,7 +1432,7 @@ public class Ventana extends javax.swing.JFrame {
                         .addComponent(jTextFieldVerExtraEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanelIntroducirDatosAnimales3Layout.createSequentialGroup()
                         .addGroup(jPanelIntroducirDatosAnimales3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButtonVerCuidadorPerosnal)
+                            .addComponent(jRadioButtonVerCuidadorPersonal)
                             .addComponent(jRadioButtonVerAdministrativoPersonal))
                         .addGap(51, 51, 51)
                         .addGroup(jPanelIntroducirDatosAnimales3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1448,7 +1463,7 @@ public class Ventana extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanelIntroducirDatosAnimales3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelTextoTamaño4)
-                    .addComponent(jTextFieldVerSalarioPerosnal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldVerSalarioPersonal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanelIntroducirDatosAnimales3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelIntroducirDatosAnimales3Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1463,7 +1478,7 @@ public class Ventana extends javax.swing.JFrame {
                             .addComponent(jRadioButtonVerGuiaPersonal))
                         .addGap(7, 7, 7)
                         .addGroup(jPanelIntroducirDatosAnimales3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jRadioButtonVerCuidadorPerosnal)
+                            .addComponent(jRadioButtonVerCuidadorPersonal)
                             .addComponent(jRadioButtonVerLimpiadorPersonal))
                         .addGap(18, 18, 18)
                         .addGroup(jPanelIntroducirDatosAnimales3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1804,11 +1819,11 @@ public class Ventana extends javax.swing.JFrame {
         this.jTextFieldVerExtraEmpleado.setVisible(true);
     }//GEN-LAST:event_jRadioButtonVerAdministrativoPersonalMousePressed
 
-    private void jRadioButtonVerCuidadorPerosnalMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRadioButtonVerCuidadorPerosnalMousePressed
+    private void jRadioButtonVerCuidadorPersonalMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRadioButtonVerCuidadorPersonalMousePressed
         this.jLabelVerEmpleado.setVisible(true);
         this.jLabelVerEmpleado.setText("Experiencia");
         this.jTextFieldVerExtraEmpleado.setVisible(true);
-    }//GEN-LAST:event_jRadioButtonVerCuidadorPerosnalMousePressed
+    }//GEN-LAST:event_jRadioButtonVerCuidadorPersonalMousePressed
 
     private void jRadioButtonVerGuiaPersonalMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRadioButtonVerGuiaPersonalMousePressed
         this.jLabelVerEmpleado.setVisible(true);
@@ -1823,7 +1838,7 @@ public class Ventana extends javax.swing.JFrame {
     }//GEN-LAST:event_jRadioButtonVerLimpiadorPersonalMousePressed
 
     private void jButtonCrearHabitatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCrearHabitatActionPerformed
-            String nombreHabitat = this.jTextFieldNombreHabitat.getText();
+        String nombreHabitat = this.jTextFieldNombreHabitat.getText();
         String clima = this.jTextFieldClimaHabitat.getText();
         int tamaño = Integer.parseInt(this.jTextFieldTamañoHabitat.getText());
         int capacidad = Integer.parseInt(this.jTextFieldCapacidadHabitat.getText());
@@ -1930,31 +1945,152 @@ public class Ventana extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonEliminarHabitatActionPerformed
 
     private void jButtonCrearPersonalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCrearPersonalActionPerformed
-        String nombrePersonal = this.jTextFieldNombrePersonal.getText();
-        String horario = this.jTextFieldClimaHabitat.getText();
-        int sueldo = Integer.parseInt(this.jTextFieldTamañoHabitat.getText());
-        int extra = Integer.parseInt(this.jTextFieldCapacidadHabitat.getText());
+        String nombrePersona = this.jTextFieldNombrePersonal.getText();
+        String horario = "";
+        double salario = Double.parseDouble(this.jTextFieldSalarioPersonal.getText());
         
-        
-         /*Habitat nuevoHabitat = new Habitat(nombreHabitat, clima, tamaño, capacidad, numeroAnimales);
-        this.miZoo.añadirHabitat(nuevoHabitat);
-        
-        if(this.miZoo==null){
-            this.jLabelEstado.setText("Aun no se ha creado el habitat.");
+        if(this.jRadioButtonMañana.isSelected()){
+            horario ="Mañana";
+        }else if(this.jRadioButtonTarde.isSelected()){
+            horario = "Tarde";
+        }else if(this.jRadioButtonNoche.isSelected()){
+            horario = "Noche";
         }else{
-             this.miZoo.añadirHabitat(nuevoHabitat);
-            this.jLabelEstado.setText("Se ha añadido el habitat ya");
-            
-            //Tengo que crear el combobox par añadir el habitat en lo de modificar
-            this.jComboBoxVerHabitat.addItem(nombreHabitat);
-            //limpiar todo
-            this.jTextFieldNombreHabitat.setText("");
-            this.jTextFieldClimaHabitat.setText("");
-            this.jTextFieldTamañoHabitat.setText("");
-            this.jTextFieldCapacidadHabitat.setText("");
-            this.jSpinnerNumeroDeAnimalesHabitat.setValue(0);
-        }*/
+            this.jLabelEstado.setText("Selecciona un horario");
+        }
+        
+        String valorExtra = this.jTextFieldExtraEmpleado.getText();
+        Personal nuevo = null;
+        if(this.jRadioButtonAdministrativoPersonal.isSelected()){
+            nuevo = new Administrativo(nombrePersona, horario, salario, valorExtra);
+        }else if(this.jRadioButtonCuidadorPerosnal.isSelected()){
+            int experiencia = Integer.parseInt(valorExtra);
+            nuevo = new Cuidador(nombrePersona, horario, salario, experiencia);
+        }else if(this.jRadioButtonGuiaPersonal.isSelected()){
+            nuevo = new Guia(nombrePersona, horario, salario, valorExtra);
+        }else if(this.jRadioButtonLimpiadorPersonal.isSelected()){
+            nuevo = new Limpiador(nombrePersona, horario, salario, valorExtra);
+        }else{
+            this.jLabelEstado.setText("Selecciona un tipo de personal");
+        }
+        
+        this.miZoo.añadirPersonal(nuevo);
+        this.jComboBoxVerPersonal.addItem(nombrePersona);
+        this.jLabelEstado.setText("Personal añadido");
+        
+        this.jTextFieldNombrePersonal.setText("");
+        this.jTextFieldSalarioPersonal.setText("");
+        this.jTextFieldExtraEmpleado.setText("");
+        this.buttonGroupTipoDePersonal.clearSelection();
+        this.buttonGroupHorarioPersonal.clearSelection();
+        this.jLabelEmpleado.setText("");
+        this.jTextFieldExtraEmpleado.setVisible(false);
+        
+        
+        
     }//GEN-LAST:event_jButtonCrearPersonalActionPerformed
+
+    private void jComboBoxVerPersonalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxVerPersonalActionPerformed
+        String nombreSeleccionado = (String) this.jComboBoxVerPersonal.getSelectedItem();
+    
+        if(nombreSeleccionado == null){
+           return; 
+        }
+        
+        Personal seleccionado = this.miZoo.buscarPersonal(nombreSeleccionado);
+        
+        if(seleccionado == null){
+            this.jLabelEstado.setText("No se encontro el personal.");
+            return;
+        }
+    
+        this.jTextFieldVerNombrePersonal.setText(seleccionado.getNombre());
+        this.jTextFieldVerSalarioPersonal.setText(String.valueOf(seleccionado.getSueldo()));
+
+        switch(seleccionado.getHorario()){
+            case "Mañana":
+                this.jRadioButtonVerMañana.setSelected(true); break;
+            case "Tarde":
+                this.jRadioButtonVerTarde.setSelected(true); break;
+            case "Noche":
+                this.jRadioButtonVerNoche.setSelected(true); break;
+            }
+
+            
+        if(seleccionado instanceof Administrativo){
+            Administrativo a = (Administrativo) seleccionado;
+            this.jRadioButtonVerAdministrativoPersonal.setSelected(true);
+            this.jLabelVerEmpleado.setText("Departamento:");
+            this.jTextFieldVerExtraEmpleado.setText(a.getDepartamento());
+        }else if(seleccionado instanceof Cuidador){
+            Cuidador c = (Cuidador) seleccionado;
+            this.jRadioButtonVerCuidadorPersonal.setSelected(true);
+            this.jLabelVerEmpleado.setText("Experiencia:");
+            this.jTextFieldVerExtraEmpleado.setText(String.valueOf(c.getExperiencia()));
+        }else if(seleccionado instanceof Guia){
+            Guia g = (Guia) seleccionado;
+            this.jRadioButtonVerGuiaPersonal.setSelected(true);
+            this.jLabelVerEmpleado.setText("Idioma:");
+            this.jTextFieldVerExtraEmpleado.setText(g.getIdioma());
+        }else if(seleccionado instanceof Limpiador){
+            Limpiador l = (Limpiador) seleccionado;
+            this.jRadioButtonVerLimpiadorPersonal.setSelected(true);
+            this.jLabelVerEmpleado.setText("Area:");
+            this.jTextFieldVerExtraEmpleado.setText(l.getArea());
+        }
+
+   
+        this.jTextFieldVerExtraEmpleado.setVisible(true);
+        this.jLabelVerEmpleado.setVisible(true);
+        this.jLabelEstado.setText("Personal cargado.");
+    }//GEN-LAST:event_jComboBoxVerPersonalActionPerformed
+
+    private void jButtonEditarPersonalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditarPersonalActionPerformed
+        String nombreSeleccionado = (String) this.jComboBoxVerPersonal.getSelectedItem();
+        int indice = this.jComboBoxVerPersonal.getSelectedIndex();
+        Personal buscado = this.miZoo.buscarPersonal(nombreSeleccionado);
+        
+        if(buscado == null){
+            this.jLabelEstado.setText("No se encontro el empleado.");
+        }else{
+            String nuevoNombre = this.jTextFieldVerNombrePersonal.getText();
+            double salario = Double.parseDouble(this.jTextFieldVerSalarioPersonal.getText());
+            
+            String horario = "";
+            if(this.jRadioButtonVerMañana.isSelected()){
+                horario = "Mañana";
+            }else if(this.jRadioButtonVerTarde.isSelected()){
+                horario = "Tarde";
+            }else if(this.jRadioButtonVerNoche.isSelected()){
+                horario = "Noche";
+            }else{
+                this.jLabelEstado.setText("Selecciona un horario.");
+                return;
+            }
+
+            String valorExtra = this.jTextFieldVerExtraEmpleado.getText();
+
+            buscado.setNombre(nuevoNombre);
+            buscado.setHorario(horario);
+            buscado.setSueldo(salario);
+        
+            if(buscado instanceof Administrativo){
+                ((Administrativo) buscado).setDepartamento(valorExtra);
+            }else if(buscado instanceof Cuidador){
+                int experiencia = Integer.parseInt(valorExtra);
+                ((Cuidador) buscado).setExperiencia(experiencia);
+            }else if(buscado instanceof Guia){
+                ((Guia) buscado).setIdioma(valorExtra);
+            }else if(buscado instanceof Limpiador){
+                ((Limpiador) buscado).setArea(valorExtra);
+            }
+
+            this.jComboBoxVerPersonal.removeItemAt(indice);
+            this.jComboBoxVerPersonal.addItem(nuevoNombre);
+
+            this.jLabelEstado.setText("Personal modificado correctamente.");
+        }
+    }//GEN-LAST:event_jButtonEditarPersonalActionPerformed
 
     
     /**
@@ -2096,11 +2232,11 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButtonCuidadorPerosnal;
     private javax.swing.JRadioButton jRadioButtonGuiaPersonal;
     private javax.swing.JRadioButton jRadioButtonLimpiadorPersonal;
-    private javax.swing.JRadioButton jRadioButtonMañana2;
+    private javax.swing.JRadioButton jRadioButtonMañana;
     private javax.swing.JRadioButton jRadioButtonNoche;
     private javax.swing.JRadioButton jRadioButtonTarde;
     private javax.swing.JRadioButton jRadioButtonVerAdministrativoPersonal;
-    private javax.swing.JRadioButton jRadioButtonVerCuidadorPerosnal;
+    private javax.swing.JRadioButton jRadioButtonVerCuidadorPersonal;
     private javax.swing.JRadioButton jRadioButtonVerGuiaPersonal;
     private javax.swing.JRadioButton jRadioButtonVerLimpiadorPersonal;
     private javax.swing.JRadioButton jRadioButtonVerMañana;
@@ -2125,16 +2261,16 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldNombreHabitat;
     private javax.swing.JTextField jTextFieldNombrePersonal;
     private javax.swing.JTextField jTextFieldNombreZoo;
+    private javax.swing.JTextField jTextFieldSalarioPersonal;
     private javax.swing.JTextField jTextFieldSuperficieZoo;
     private javax.swing.JTextField jTextFieldTamañoHabitat;
-    private javax.swing.JTextField jTextFieldTamañoHabitat1;
     private javax.swing.JTextField jTextFieldVeerNombreZoo;
     private javax.swing.JTextField jTextFieldVerCapacidadHabitat;
     private javax.swing.JTextField jTextFieldVerClimaHabitat;
     private javax.swing.JTextField jTextFieldVerExtraEmpleado;
     private javax.swing.JTextField jTextFieldVerNombreHabitat;
     private javax.swing.JTextField jTextFieldVerNombrePersonal;
-    private javax.swing.JTextField jTextFieldVerSalarioPerosnal;
+    private javax.swing.JTextField jTextFieldVerSalarioPersonal;
     private javax.swing.JTextField jTextFieldVerSuperficieZoo;
     private javax.swing.JTextField jTextFieldVerTamañoHabitat;
     // End of variables declaration//GEN-END:variables
