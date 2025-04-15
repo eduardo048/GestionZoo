@@ -31,9 +31,8 @@ public class Guia extends Personal implements Serializable {
     
     @Override
     public String toString() {
-        String texto = super.toString() + 
-                       " | Idiomas: " + idioma;    
-        return texto;
-    } 
+        return getNombre();
+}
+
     
 }

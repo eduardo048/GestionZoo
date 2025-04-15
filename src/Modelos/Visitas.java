@@ -13,13 +13,13 @@ import java.time.LocalDate;
 public class Visitas {
     private LocalDate fecha;
     private int numVisitantes;
-    private String guia;
+    private Guia guia;
     private String recorrido;
 
     public Visitas() {
     }
 
-    public Visitas(LocalDate fecha, int numVisitantes, String guia, String recorrido) {
+    public Visitas(LocalDate fecha, int numVisitantes, Guia guia, String recorrido) {
         this.fecha = fecha;
         this.numVisitantes = numVisitantes;
         this.guia = guia;
@@ -42,11 +42,11 @@ public class Visitas {
         this.numVisitantes = numVisitantes;
     }
 
-    public String getGuia() {
+    public Guia getGuia() {
         return guia;
     }
 
-    public void setGuia(String guia) {
+    public void setGuia(Guia guia) {
         this.guia = guia;
     }
 

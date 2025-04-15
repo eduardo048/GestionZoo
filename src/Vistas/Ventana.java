@@ -13,10 +13,12 @@ import Modelos.Guia;
 import Modelos.Habitat;
 import Modelos.Limpiador;
 import Modelos.Personal;
+import Modelos.Visitas;
 import java.awt.Image;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.time.LocalDate;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
@@ -1640,6 +1642,11 @@ public class Ventana extends javax.swing.JFrame {
 
         jButtonCrearVisita.setFont(new java.awt.Font("Segoe Script", 3, 12)); // NOI18N
         jButtonCrearVisita.setText("Crear Visita");
+        jButtonCrearVisita.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCrearVisitaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelIntroducirDatosHabitat2Layout = new javax.swing.GroupLayout(jPanelIntroducirDatosHabitat2);
         jPanelIntroducirDatosHabitat2.setLayout(jPanelIntroducirDatosHabitat2Layout);
@@ -1664,8 +1671,8 @@ public class Ventana extends javax.swing.JFrame {
                                     .addComponent(jComboBoxNombreGuiaVisita, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jTextFieldFechaVisita)
                                     .addComponent(jLabelEmpleado1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextFieldRecorridoVisita)
-                                    .addComponent(jSpinnerNumeroVisitantes, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(jSpinnerNumeroVisitantes, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
+                                    .addComponent(jTextFieldRecorridoVisita)))
                             .addGroup(jPanelIntroducirDatosHabitat2Layout.createSequentialGroup()
                                 .addComponent(jButtonCrearVisita, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(30, 30, 30)))
@@ -1712,9 +1719,9 @@ public class Ventana extends javax.swing.JFrame {
                             .addComponent(jTextFieldRecorridoVisita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
                 .addComponent(jLabelEmpleado1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButtonCrearVisita)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
 
         jPanelIntroducirDatosHabitat3.setBackground(new java.awt.Color(153, 255, 204));
@@ -2376,6 +2383,10 @@ public class Ventana extends javax.swing.JFrame {
         
         this.miZoo.añadirPersonal(nuevo);
         this.jComboBoxVerPersonal.addItem(nombrePersona);
+        
+        if(nuevo instanceof Guia){
+            this.jComboBoxNombreGuiaVisita.addItem((Guia) nuevo); 
+        }
         this.jLabelEstado.setText("Personal añadido");
         
         this.jTextFieldNombrePersonal.setText("");
@@ -2487,6 +2498,13 @@ public class Ventana extends javax.swing.JFrame {
 
             this.jComboBoxVerPersonal.removeItemAt(indice);
             this.jComboBoxVerPersonal.addItem(nuevoNombre);
+            
+            if(buscado instanceof Guia){
+                this.jComboBoxNombreGuiaVisita.removeItemAt(indice);
+                this.jComboBoxNombreGuiaVisita.removeItem(buscado);
+                this.jComboBoxNombreGuiaVisita.addItem((Guia) buscado);
+            }
+
 
             this.jLabelEstado.setText("Personal modificado correctamente.");
         }
@@ -2498,6 +2516,17 @@ public class Ventana extends javax.swing.JFrame {
         if(nombrePersona == null){
             this.jLabelEstado.setText("El empleado no se pudo eliminar");
         }else{
+            Personal persona = this.miZoo.buscarPersonal(nombrePersona);
+            Guia guiaEliminado = null;
+            if(persona instanceof Guia){
+                for (int i = 0; i < this.jComboBoxNombreGuiaVisita.getItemCount(); i++){
+                    Guia gui = this.jComboBoxNombreGuiaVisita.getItemAt(i);
+                    if(gui.getNombre().equalsIgnoreCase(nombrePersona)){
+                        guiaEliminado = gui;
+                        break;
+                }
+            }
+        }
             this.miZoo.eliminarPersonal(nombrePersona);
             
             this.jComboBoxVerPersonal.removeItem(nombrePersona);
@@ -2512,6 +2541,10 @@ public class Ventana extends javax.swing.JFrame {
             this.jTextFieldVerExtraEmpleado.setVisible(false);
             this.jLabelVerEmpleado.setText("");
             
+            if(guiaEliminado != null){
+                this.jComboBoxNombreGuiaVisita.removeItem(guiaEliminado);
+            }
+
             this.jLabelEstado.setText("El empleado " + nombrePersona + " se elimino");
         }
     }//GEN-LAST:event_jButtonEliminarPersonalActionPerformed
@@ -2531,6 +2564,31 @@ public class Ventana extends javax.swing.JFrame {
     private void jRadioButtonGuiaPersonal2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRadioButtonGuiaPersonal2MousePressed
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButtonGuiaPersonal2MousePressed
+
+    private void jButtonCrearVisitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCrearVisitaActionPerformed
+        String textoFecha = this.jTextFieldFechaVisita.getText();
+        LocalDate fecha = LocalDate.parse(textoFecha);
+        int numeroVisitantes = (int) this.jSpinnerNumeroVisitantes.getValue();
+        Guia guiaSeleccionado = (Guia) this.jComboBoxNombreGuiaVisita.getSelectedItem();
+        String recorrido = this.jTextFieldRecorridoVisita.getText();
+        
+        Visitas nuevaVisita = new Visitas(fecha, numeroVisitantes, guiaSeleccionado, recorrido);
+        this.miZoo.añadirVisita(nuevaVisita);
+        
+        if(this.miZoo==null){
+            this.jLabelEstado.setText("Aun no se ha creado la visita.");
+        }else{
+            this.miZoo.añadirVisita(nuevaVisita);
+            this.jLabelEstado.setText("Se ha añadido la visita ya");
+            
+ 
+            this.jTextFieldFechaVisita.setText("");
+            this.jSpinnerNumeroVisitantes.setValue(0);
+            this.jComboBoxNombreGuiaVisita.setSelectedIndex(-1);
+            this.jTextFieldRecorridoVisita.setText("");
+            
+        }
+    }//GEN-LAST:event_jButtonCrearVisitaActionPerformed
 
     
     /**
@@ -2590,7 +2648,7 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JButton jButtonVerTodoLosDatosZoo;
     private javax.swing.JComboBox<String> jComboBoxAnimalesParaModificar;
     private javax.swing.JComboBox<String> jComboBoxCiudadesZoo;
-    private javax.swing.JComboBox<String> jComboBoxNombreGuiaVisita;
+    private javax.swing.JComboBox<Guia> jComboBoxNombreGuiaVisita;
     private javax.swing.JComboBox<String> jComboBoxVerCiudadZoo;
     private javax.swing.JComboBox<String> jComboBoxVerFechaVisitas;
     private javax.swing.JComboBox<String> jComboBoxVerHabitat;

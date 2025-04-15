@@ -2702,8 +2702,8 @@
                                               <Component id="jComboBoxNombreGuiaVisita" max="32767" attributes="0"/>
                                               <Component id="jTextFieldFechaVisita" max="32767" attributes="0"/>
                                               <Component id="jLabelEmpleado1" min="-2" pref="109" max="-2" attributes="0"/>
+                                              <Component id="jSpinnerNumeroVisitantes" pref="139" max="32767" attributes="0"/>
                                               <Component id="jTextFieldRecorridoVisita" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jSpinnerNumeroVisitantes" min="-2" pref="139" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
@@ -2768,9 +2768,9 @@
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="jLabelEmpleado1" min="-2" pref="22" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Component id="jButtonCrearVisita" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="37" max="32767" attributes="0"/>
+                          <EmptySpace pref="61" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -2930,7 +2930,7 @@
                     </Property>
                   </Properties>
                   <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;Guia&gt;"/>
                   </AuxValues>
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextFieldFechaVisita">
@@ -2951,6 +2951,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Crear Visita"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonCrearVisitaActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
