@@ -62,7 +62,13 @@ public class Visitas {
     public String toString() {
         String texto = fecha + " | Visitantes: " + numVisitantes + " | Guía: " + guia + " | Recorrido: " + recorrido;
         return texto;
-    } 
+    }
+    
+    public String getFechaComoTexto() {
+        return this.fecha.toString();
+    }
+
+    
     
     
 }

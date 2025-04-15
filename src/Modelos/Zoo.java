@@ -54,6 +54,41 @@ public class Zoo  implements Serializable {
         this.ciudad = ciudad;
     }
 
+    public ArrayList<Animal> getAnimales() {
+        return animales;
+    }
+
+    public void setAnimales(ArrayList<Animal> animales) {
+        this.animales = animales;
+    }
+
+    public ArrayList<Habitat> getHabitats() {
+        return habitats;
+    }
+
+    public void setHabitats(ArrayList<Habitat> habitats) {
+        this.habitats = habitats;
+    }
+
+    public ArrayList<Personal> getPersonal() {
+        return personal;
+    }
+
+    public void setPersonal(ArrayList<Personal> personal) {
+        this.personal = personal;
+    }
+
+    public ArrayList<Visitas> getVisitas() {
+        return visitas;
+    }
+
+    public void setVisitas(ArrayList<Visitas> visitas) {
+        this.visitas = visitas;
+    }
+    
+    
+    
+
     @Override
     public String toString() {
         String texto= "DATOS DEL ZOO: \n" +
@@ -184,7 +219,18 @@ public class Zoo  implements Serializable {
         }
     }
     
-    
-    
+    //Filtrar visitas entre dos rangos de fecha 
+    public ArrayList<Visitas> buscarVisitasEntre(LocalDate fechaInicio, LocalDate fechaFin){
+        ArrayList<Visitas> resultado = new ArrayList<>();
+        
+        for(int i=0; i<this.visitas.size(); i++){
+            Visitas visita = this.visitas.get(i);
+            LocalDate fecha = visita.getFecha();
+            if((fecha.isEqual(fechaInicio) || fecha.isAfter(fechaInicio)) && (fecha.isEqual(fechaFin) || fecha.isBefore(fechaFin))){
+                resultado.add(visita);
+            }
+        }
+        return resultado;
+    }
     
 }

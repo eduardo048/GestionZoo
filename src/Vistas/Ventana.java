@@ -19,6 +19,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
@@ -198,16 +199,16 @@ public class Ventana extends javax.swing.JFrame {
         jRadioButtonLimpiadorPersonal2 = new javax.swing.JRadioButton();
         jLabelEmpleado2 = new javax.swing.JLabel();
         jLabelTitulozooDeDatosHabitatN8 = new javax.swing.JLabel();
-        jTextFieldVerRecorridoVisita = new javax.swing.JTextField();
+        jTextFieldVerVisitantesVisita = new javax.swing.JTextField();
         jLabelTitulozooDeDatosHabitatN9 = new javax.swing.JLabel();
         jLabelTitulozooDeDatosHabitatN10 = new javax.swing.JLabel();
         jLabelTitulozooDeDatosHabitatN11 = new javax.swing.JLabel();
         jComboBoxVerFechaVisitas = new javax.swing.JComboBox<>();
-        jTextFieldVerVisitas = new javax.swing.JTextField();
+        jTextFieldVerRecorridoVisitas = new javax.swing.JTextField();
         jTextFieldVerGuiaVisita = new javax.swing.JTextField();
         jLabelTitulozooDeDatosHabitatN13 = new javax.swing.JLabel();
-        jTextFieldVerFechInicioVisita = new javax.swing.JTextField();
-        jTextFieldVerFechaFinalVsitas = new javax.swing.JTextField();
+        jTextFieldVerFechaInicioVisita = new javax.swing.JTextField();
+        jTextFieldVerFechaFinalVisitas = new javax.swing.JTextField();
         jButtonBuscarVisita = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabelEstado = new javax.swing.JLabel();
@@ -1764,8 +1765,13 @@ public class Ventana extends javax.swing.JFrame {
         jLabelTitulozooDeDatosHabitatN8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelTitulozooDeDatosHabitatN8.setText("Fecha  Inicio");
 
-        jTextFieldVerRecorridoVisita.setFont(new java.awt.Font("Segoe Script", 3, 12)); // NOI18N
-        jTextFieldVerRecorridoVisita.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldVerVisitantesVisita.setFont(new java.awt.Font("Segoe Script", 3, 12)); // NOI18N
+        jTextFieldVerVisitantesVisita.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldVerVisitantesVisita.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jTextFieldVerVisitantesVisitaMousePressed(evt);
+            }
+        });
 
         jLabelTitulozooDeDatosHabitatN9.setBackground(new java.awt.Color(0, 0, 0));
         jLabelTitulozooDeDatosHabitatN9.setFont(new java.awt.Font("Segoe Script", 3, 14)); // NOI18N
@@ -1787,9 +1793,14 @@ public class Ventana extends javax.swing.JFrame {
 
         jComboBoxVerFechaVisitas.setFont(new java.awt.Font("Segoe Script", 3, 12)); // NOI18N
         jComboBoxVerFechaVisitas.setForeground(new java.awt.Color(0, 0, 0));
+        jComboBoxVerFechaVisitas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxVerFechaVisitasActionPerformed(evt);
+            }
+        });
 
-        jTextFieldVerVisitas.setFont(new java.awt.Font("Segoe Script", 3, 12)); // NOI18N
-        jTextFieldVerVisitas.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldVerRecorridoVisitas.setFont(new java.awt.Font("Segoe Script", 3, 12)); // NOI18N
+        jTextFieldVerRecorridoVisitas.setForeground(new java.awt.Color(0, 0, 0));
 
         jTextFieldVerGuiaVisita.setFont(new java.awt.Font("Segoe Script", 3, 12)); // NOI18N
         jTextFieldVerGuiaVisita.setForeground(new java.awt.Color(0, 0, 0));
@@ -1800,16 +1811,21 @@ public class Ventana extends javax.swing.JFrame {
         jLabelTitulozooDeDatosHabitatN13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelTitulozooDeDatosHabitatN13.setText("Fecha Final");
 
-        jTextFieldVerFechInicioVisita.setFont(new java.awt.Font("Segoe Script", 3, 12)); // NOI18N
-        jTextFieldVerFechInicioVisita.setForeground(new java.awt.Color(0, 0, 0));
-        jTextFieldVerFechInicioVisita.setText("yyyy-MM-dd ");
+        jTextFieldVerFechaInicioVisita.setFont(new java.awt.Font("Segoe Script", 3, 12)); // NOI18N
+        jTextFieldVerFechaInicioVisita.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldVerFechaInicioVisita.setText("yyyy-MM-dd ");
 
-        jTextFieldVerFechaFinalVsitas.setFont(new java.awt.Font("Segoe Script", 3, 12)); // NOI18N
-        jTextFieldVerFechaFinalVsitas.setForeground(new java.awt.Color(0, 0, 0));
-        jTextFieldVerFechaFinalVsitas.setText("yyyy-MM-dd ");
+        jTextFieldVerFechaFinalVisitas.setFont(new java.awt.Font("Segoe Script", 3, 12)); // NOI18N
+        jTextFieldVerFechaFinalVisitas.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldVerFechaFinalVisitas.setText("yyyy-MM-dd ");
 
         jButtonBuscarVisita.setFont(new java.awt.Font("Segoe Script", 3, 12)); // NOI18N
         jButtonBuscarVisita.setText("Buscar");
+        jButtonBuscarVisita.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonBuscarVisitaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelIntroducirDatosHabitat3Layout = new javax.swing.GroupLayout(jPanelIntroducirDatosHabitat3);
         jPanelIntroducirDatosHabitat3.setLayout(jPanelIntroducirDatosHabitat3Layout);
@@ -1835,10 +1851,10 @@ public class Ventana extends javax.swing.JFrame {
                             .addGroup(jPanelIntroducirDatosHabitat3Layout.createSequentialGroup()
                                 .addGroup(jPanelIntroducirDatosHabitat3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanelIntroducirDatosHabitat3Layout.createSequentialGroup()
-                                        .addComponent(jTextFieldVerRecorridoVisita, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jTextFieldVerVisitantesVisita, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabelEmpleado2, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jTextFieldVerVisitas, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldVerRecorridoVisitas, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jTextFieldVerGuiaVisita, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(760, 760, 760)
                                 .addGroup(jPanelIntroducirDatosHabitat3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1847,8 +1863,8 @@ public class Ventana extends javax.swing.JFrame {
                                         .addGap(23, 23, 23)
                                         .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jRadioButtonLimpiadorPersonal2)))
-                            .addComponent(jTextFieldVerFechInicioVisita, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldVerFechaFinalVsitas, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jTextFieldVerFechaInicioVisita, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldVerFechaFinalVisitas, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanelIntroducirDatosHabitat3Layout.createSequentialGroup()
                         .addGap(41, 41, 41)
                         .addComponent(jLabelTitulozooDeDatosHabitatN3, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1872,11 +1888,11 @@ public class Ventana extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelIntroducirDatosHabitat3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelTitulozooDeDatosHabitatN8)
-                    .addComponent(jTextFieldVerFechInicioVisita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldVerFechaInicioVisita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelIntroducirDatosHabitat3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabelTitulozooDeDatosHabitatN13)
-                    .addComponent(jTextFieldVerFechaFinalVsitas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldVerFechaFinalVisitas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jButtonBuscarVisita)
                 .addGap(34, 34, 34)
@@ -1886,7 +1902,7 @@ public class Ventana extends javax.swing.JFrame {
                     .addGroup(jPanelIntroducirDatosHabitat3Layout.createSequentialGroup()
                         .addGroup(jPanelIntroducirDatosHabitat3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jRadioButtonGuiaPersonal2)
-                            .addComponent(jTextFieldVerVisitas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTextFieldVerRecorridoVisitas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanelIntroducirDatosHabitat3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanelIntroducirDatosHabitat3Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
@@ -1903,7 +1919,7 @@ public class Ventana extends javax.swing.JFrame {
                         .addGap(18, 18, 18)))
                 .addGroup(jPanelIntroducirDatosHabitat3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanelIntroducirDatosHabitat3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTextFieldVerRecorridoVisita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextFieldVerVisitantesVisita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabelTitulozooDeDatosHabitatN9))
                     .addComponent(jLabelEmpleado2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -2548,7 +2564,7 @@ public class Ventana extends javax.swing.JFrame {
             this.jLabelEstado.setText("El empleado " + nombrePersona + " se elimino");
         }
     }//GEN-LAST:event_jButtonEliminarPersonalActionPerformed
-
+    
     private void jRadioButtonGuiaPersonal1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRadioButtonGuiaPersonal1MousePressed
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButtonGuiaPersonal1MousePressed
@@ -2582,13 +2598,74 @@ public class Ventana extends javax.swing.JFrame {
             this.jLabelEstado.setText("Se ha añadido la visita ya");
             
  
-            this.jTextFieldFechaVisita.setText("");
+            this.jTextFieldFechaVisita.setText("yyyy-MM-dd");
             this.jSpinnerNumeroVisitantes.setValue(0);
             this.jComboBoxNombreGuiaVisita.setSelectedIndex(-1);
             this.jTextFieldRecorridoVisita.setText("");
             
         }
     }//GEN-LAST:event_jButtonCrearVisitaActionPerformed
+
+    private void jButtonBuscarVisitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarVisitaActionPerformed
+        String textoInicio = this.jTextFieldVerFechaInicioVisita.getText();
+        String textoFinal = this.jTextFieldVerFechaFinalVisitas.getText();
+        
+        if(textoInicio.isEmpty() || textoFinal.isEmpty()){
+            this.jLabelEstado.setText("Debes ingresar ambas fechas");
+        }else{
+            LocalDate fechaInicio = LocalDate.parse(textoInicio);
+            LocalDate fechaFinal = LocalDate.parse(textoFinal);
+            
+            ArrayList<Visitas> visitasFiltradas = this.miZoo.buscarVisitasEntre(fechaInicio, fechaFinal);
+            
+            this.jComboBoxVerFechaVisitas.removeAllItems();
+            
+            if(visitasFiltradas.isEmpty()){
+                this.jLabelEstado.setText("No se encontrator visitas en ese rango");
+            }else{
+                ArrayList<String>fechasAgregadas = new ArrayList<>();
+                
+                for(int i=0; i<visitasFiltradas.size(); i++){
+                    Visitas visita = visitasFiltradas.get(i);
+                    String fechaTexto = visita.getFechaComoTexto();
+                    if(!fechasAgregadas.contains(fechaTexto)){
+                        this.jComboBoxVerFechaVisitas.addItem(visita.getFechaComoTexto());
+                        fechasAgregadas.add(fechaTexto);
+                    }
+                }
+                this.jLabelEstado.setText("Visitas encontradas");
+            }
+        }
+    }//GEN-LAST:event_jButtonBuscarVisitaActionPerformed
+
+    private void jTextFieldVerVisitantesVisitaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextFieldVerVisitantesVisitaMousePressed
+        
+    }//GEN-LAST:event_jTextFieldVerVisitantesVisitaMousePressed
+
+    private void jComboBoxVerFechaVisitasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxVerFechaVisitasActionPerformed
+       String fechaSeleccionada = (String) this.jComboBoxVerFechaVisitas.getSelectedItem();
+        
+        if(fechaSeleccionada == null || fechaSeleccionada.isEmpty()){
+            this.jLabelEstado.setText("No se ha seleccionado la fecha");
+        }else{
+            LocalDate fechaBuscada = LocalDate.parse(fechaSeleccionada);
+            ArrayList<Visitas> todasLasVisitas = this.miZoo.getVisitas();
+            
+            for(int i=0; i<todasLasVisitas.size(); i++){
+                Visitas visita = todasLasVisitas.get(i);
+                
+                if(visita.getFecha().isEqual(fechaBuscada)){
+                    this.jTextFieldVerRecorridoVisitas.setText(visita.getRecorrido());
+                    this.jTextFieldVerGuiaVisita.setText(visita.getGuia().getNombre());
+                    this.jTextFieldVerVisitantesVisita.setText(String.valueOf(visita.getNumVisitantes()));
+                    
+                    this.jLabelEstado.setText("Visita cargada correctamente");
+                    return;
+                }
+            }
+             this.jLabelEstado.setText("No se encontró visita para esa fecha");
+        }
+    }//GEN-LAST:event_jComboBoxVerFechaVisitasActionPerformed
 
     
     /**
@@ -2795,15 +2872,15 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldVerCapacidadHabitat;
     private javax.swing.JTextField jTextFieldVerClimaHabitat;
     private javax.swing.JTextField jTextFieldVerExtraEmpleado;
-    private javax.swing.JTextField jTextFieldVerFechInicioVisita;
-    private javax.swing.JTextField jTextFieldVerFechaFinalVsitas;
+    private javax.swing.JTextField jTextFieldVerFechaFinalVisitas;
+    private javax.swing.JTextField jTextFieldVerFechaInicioVisita;
     private javax.swing.JTextField jTextFieldVerGuiaVisita;
     private javax.swing.JTextField jTextFieldVerNombreHabitat;
     private javax.swing.JTextField jTextFieldVerNombrePersonal;
-    private javax.swing.JTextField jTextFieldVerRecorridoVisita;
+    private javax.swing.JTextField jTextFieldVerRecorridoVisitas;
     private javax.swing.JTextField jTextFieldVerSalarioPersonal;
     private javax.swing.JTextField jTextFieldVerSuperficieZoo;
     private javax.swing.JTextField jTextFieldVerTamañoHabitat;
-    private javax.swing.JTextField jTextFieldVerVisitas;
+    private javax.swing.JTextField jTextFieldVerVisitantesVisita;
     // End of variables declaration//GEN-END:variables
 }
