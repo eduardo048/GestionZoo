@@ -2,6 +2,7 @@
 package Modelos;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Zoo  implements Serializable {
@@ -11,6 +12,7 @@ public class Zoo  implements Serializable {
     private ArrayList<Animal> animales;
     private ArrayList<Habitat> habitats;
     private ArrayList<Personal> personal;
+    private ArrayList<Visitas> visitas;
     
     //Constructor vacio
     public Zoo() {
@@ -24,6 +26,7 @@ public class Zoo  implements Serializable {
         this.animales=new ArrayList<Animal>();
         this.habitats = new ArrayList<Habitat>();
         this.personal = new ArrayList<Personal>();
+        this.visitas = new ArrayList<Visitas>();
     }
     
     //Setters and Getters
@@ -61,11 +64,12 @@ public class Zoo  implements Serializable {
         texto += this.animales.toString();
         texto += this.habitats.toString();
         texto += this.personal.toString();
+        texto += this.visitas.toString();
         return texto;
     }
     
     
-    //Todo sobre los animales
+    //TODO SOBRE LOS ANIMALES
     
     //Crear un animal
     public void anadirAnimal(Animal nuevo){
@@ -92,8 +96,9 @@ public class Zoo  implements Serializable {
             }
         }
     }
+   
     
-    //Todo sobre los habitat
+    //TODO SOBRE LOS HABITAT
     
     //Añadir un habitat
     public void añadirHabitat(Habitat nuevo){
@@ -120,8 +125,9 @@ public class Zoo  implements Serializable {
             }
         }
     }
+ 
     
-    //Todo sobre el personal
+    //TODO SOBRE EL PERSONAL 
     
     //Añadir personal
     public void añadirPersonal(Personal nuevo){
@@ -146,6 +152,35 @@ public class Zoo  implements Serializable {
                 personal.remove(i);
                 return;            
             }          
+        }
+    }
+    
+    
+    //TODO SOBRE LAS VISITAS
+    
+    //Añadir una visita
+    public void añadirVisita(Visitas nueva){
+        this.visitas.add(nueva);
+    }
+    
+    //Buscar Visita
+    public Visitas buscarVisita(LocalDate fecha ){
+        Visitas buscado=null;
+        for(Visitas visita : this.visitas){
+            if(visita.getFecha().equals(fecha)){
+                buscado = visita;
+            }
+        }
+        return buscado;
+    }
+    
+    //Eliminar visita
+    public void eliminarVisita(LocalDate fecha){
+        for(int i=0; i<visitas.size(); i++){
+            if(visitas.get(i).getFecha().equals(fecha)){
+                visitas.remove(i);
+                return;
+            }
         }
     }
     
