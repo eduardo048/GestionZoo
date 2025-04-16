@@ -190,6 +190,18 @@ public class Zoo  implements Serializable {
         }
     }
     
+    //Buscar solo Cuidadores
+    public ArrayList<Cuidador> getCuidadores(){
+        ArrayList<Cuidador> cuidadores = new ArrayList<>();
+        for(int i=0; i<personal.size(); i++){
+            Personal per = personal.get(i);
+            if(per instanceof Cuidador){
+                cuidadores.add((Cuidador) per);
+            }
+        }
+        return cuidadores;
+    }
+    
     
     //TODO SOBRE LAS VISITAS
     
@@ -231,6 +243,47 @@ public class Zoo  implements Serializable {
             }
         }
         return resultado;
+    }
+    
+    
+    //OTRAS GESTIONES
+    
+    //Filtrar por especie
+    public ArrayList<Animal> filtrarPorEspecieAnimal(String especie){
+        ArrayList<Animal> resultado = new ArrayList<>();
+        
+        for(Animal animal : this.animales){
+            if(animal.getEspecie().equalsIgnoreCase(especie)){
+                resultado.add(animal);
+            }
+        }
+        return resultado;
+    }
+    
+    //Filtrar por edad
+    public ArrayList<Animal> filtrarPorEdadAnimal(int edad){
+        ArrayList<Animal> resultado = new ArrayList<>();
+        
+        for(Animal animal : this.animales){
+            if(animal.getEdad() == edad){
+                resultado.add(animal);
+            }
+        }
+        return resultado;
+    }
+    
+    //Filtrar por habitat
+    public ArrayList<Animal> filtrarPorHabitat(String habitat){
+        ArrayList<Animal> resultado = new ArrayList<>();
+        
+        for(int i=0; i< this.animales.size(); i++){
+            Animal animal = this.animales.get(i);
+            
+            if(animal.getHabitat().getNombre().equalsIgnoreCase(habitat)){
+                resultado.add(animal);
+            }
+        }
+        return resultado;    
     }
     
 }

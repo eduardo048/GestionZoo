@@ -9,8 +9,8 @@ public class Animal implements Serializable {
     private String especie;
     private int edad;
     private String alimentacion;
-    private String habitat;
-    private String cuidador;
+    private Habitat habitat;
+    private Cuidador cuidador;
     private String imagen;
     
     //Constructor vacio
@@ -24,8 +24,8 @@ public class Animal implements Serializable {
         this.especie = especie;
         this.edad = edad;
         this.alimentacion = alimentacion;
-        this.habitat="";
-        this.cuidador="";
+        this.habitat=null;
+        this.cuidador=null;
         this.imagen = imagen;
     }
     
@@ -62,19 +62,19 @@ public class Animal implements Serializable {
         this.alimentacion = alimentacion;
     }
 
-    public String getHabitat() {
+    public Habitat getHabitat() {
         return habitat;
     }
 
-    public void setHabitat(String habitat) {
+    public void setHabitat(Habitat habitat) {
         this.habitat = habitat;
     }
 
-    public String getCuidador() {
+    public Cuidador getCuidador() {
         return cuidador;
     }
 
-    public void setCuidador(String cuidador) {
+    public void setCuidador(Cuidador cuidador) {
         this.cuidador = cuidador;
     }
 
@@ -96,7 +96,7 @@ public class Animal implements Serializable {
                 "\n Hábitat: " + habitat +
                 "\n Cuidador: " + cuidador;
         try{//excepcio sin cuidador un animal
-            if(this.cuidador.isEmpty()){
+            if(this.cuidador == null){
                 throw new AnimalSinCuidadorExcepcion("Peligo animal sin cuidado");
             }else{
                 System.out.println("Cuidador: " + this.cuidador);
