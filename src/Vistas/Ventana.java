@@ -103,6 +103,8 @@ public class Ventana extends javax.swing.JFrame {
         jTextFieldModificarEdadAnimal = new javax.swing.JTextField();
         jTextFieldModificarAlimentacionAnimal = new javax.swing.JTextField();
         jLabelVerImagenAnimal = new javax.swing.JLabel();
+        jLabelTextoAlimentacion2 = new javax.swing.JLabel();
+        jComboBoxCuidadoresParaModificar = new javax.swing.JComboBox<>();
         jPanel2 = new javax.swing.JPanel();
         jPanelIntroducirDatosHabitat = new javax.swing.JPanel();
         jLabelTitulozooDeDatosHabitatN = new javax.swing.JLabel();
@@ -237,8 +239,6 @@ public class Ventana extends javax.swing.JFrame {
         jLabelTitulozooDeDatosHabitatN20 = new javax.swing.JLabel();
         jLabelTitulozooDeDatosHabitatN21 = new javax.swing.JLabel();
         jLabelTitulozooDeDatosHabitatN22 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextAreaVisitasPorMes = new javax.swing.JTextArea();
         jLabelTitulozooDeDatosHabitatN23 = new javax.swing.JLabel();
         jLabelTitulozooDeDatosHabitatN24 = new javax.swing.JLabel();
         jLabelTitulozooDeDatosHabitatN25 = new javax.swing.JLabel();
@@ -247,6 +247,9 @@ public class Ventana extends javax.swing.JFrame {
         jButtonFiltrarEspecie = new javax.swing.JButton();
         jButtonFiltrarEdad = new javax.swing.JButton();
         jButtonFiltrarHabitat = new javax.swing.JButton();
+        jTextFieldNumeroVisitasTotalesPorMesGestiones = new javax.swing.JTextField();
+        jButtonMostrarEstadisticaNumeroAnimalEspecie = new javax.swing.JButton();
+        jComboBoxNumeroVisitasMes = new javax.swing.JComboBox<>();
         jPanel1 = new javax.swing.JPanel();
         jLabelEstado = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -667,12 +670,12 @@ public class Ventana extends javax.swing.JFrame {
                 .addGroup(jPanelIntroducirDatosAnimalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelTextoEspecie)
                     .addComponent(jTextFieldEspecieAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanelIntroducirDatosAnimalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelIntroducirDatosAnimalesLayout.createSequentialGroup()
                         .addComponent(jLabelTextoEdad)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jSliderEdadAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, 35, Short.MAX_VALUE))
+                    .addComponent(jSliderEdadAnimal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabelTextoAlimentacion)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -756,6 +759,18 @@ public class Ventana extends javax.swing.JFrame {
         jTextFieldModificarAlimentacionAnimal.setFont(new java.awt.Font("Segoe Script", 3, 12)); // NOI18N
         jTextFieldModificarAlimentacionAnimal.setForeground(new java.awt.Color(0, 0, 0));
 
+        jLabelTextoAlimentacion2.setFont(new java.awt.Font("Segoe Script", 3, 12)); // NOI18N
+        jLabelTextoAlimentacion2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelTextoAlimentacion2.setText("Cuidador");
+
+        jComboBoxCuidadoresParaModificar.setFont(new java.awt.Font("Segoe Script", 3, 12)); // NOI18N
+        jComboBoxCuidadoresParaModificar.setForeground(new java.awt.Color(0, 0, 0));
+        jComboBoxCuidadoresParaModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxCuidadoresParaModificarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelVerAnimalLayout = new javax.swing.GroupLayout(jPanelVerAnimal);
         jPanelVerAnimal.setLayout(jPanelVerAnimalLayout);
         jPanelVerAnimalLayout.setHorizontalGroup(
@@ -787,13 +802,17 @@ public class Ventana extends javax.swing.JFrame {
                                 .addComponent(jTextFieldModificarNombreAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jTextFieldModificarEdadAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(jPanelVerAnimalLayout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(jLabelTextoAlimentacion1)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jTextFieldModificarAlimentacionAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanelVerAnimalLayout.createSequentialGroup()
                             .addGap(32, 32, 32)
-                            .addComponent(jLabel9))))
+                            .addComponent(jLabel9))
+                        .addGroup(jPanelVerAnimalLayout.createSequentialGroup()
+                            .addContainerGap()
+                            .addGroup(jPanelVerAnimalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabelTextoAlimentacion1)
+                                .addComponent(jLabelTextoAlimentacion2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGroup(jPanelVerAnimalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jComboBoxCuidadoresParaModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextFieldModificarAlimentacionAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelVerAnimalLayout.setVerticalGroup(
@@ -820,12 +839,16 @@ public class Ventana extends javax.swing.JFrame {
                     .addComponent(jLabelTextoAlimentacion1)
                     .addComponent(jTextFieldModificarAlimentacionAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanelVerAnimalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelTextoAlimentacion2)
+                    .addComponent(jComboBoxCuidadoresParaModificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabelVerImagenAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelVerAnimalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonModificarAnimal)
                     .addComponent(jButtonEliminarAnimal))
-                .addGap(52, 52, 52))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanelGestionAnimalLayout = new javax.swing.GroupLayout(jPanelGestionAnimal);
@@ -843,10 +866,10 @@ public class Ventana extends javax.swing.JFrame {
             jPanelGestionAnimalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelGestionAnimalLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addGroup(jPanelGestionAnimalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanelIntroducirDatosAnimales, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanelVerAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, 448, Short.MAX_VALUE))
-                .addContainerGap(64, Short.MAX_VALUE))
+                .addGroup(jPanelGestionAnimalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanelVerAnimal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanelIntroducirDatosAnimales, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         jTabbedPanel1.addTab("Animal", jPanelGestionAnimal);
@@ -2027,6 +2050,11 @@ public class Ventana extends javax.swing.JFrame {
 
         jComboBoxHabitatParaElNumeroAnimales.setFont(new java.awt.Font("Segoe Script", 3, 12)); // NOI18N
         jComboBoxHabitatParaElNumeroAnimales.setForeground(new java.awt.Color(0, 0, 0));
+        jComboBoxHabitatParaElNumeroAnimales.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxHabitatParaElNumeroAnimalesActionPerformed(evt);
+            }
+        });
 
         jTextFieldNumeroAnimalesPorHabitat.setFont(new java.awt.Font("Segoe Script", 3, 12)); // NOI18N
         jTextFieldNumeroAnimalesPorHabitat.setForeground(new java.awt.Color(0, 0, 0));
@@ -2095,10 +2123,6 @@ public class Ventana extends javax.swing.JFrame {
         jLabelTitulozooDeDatosHabitatN22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelTitulozooDeDatosHabitatN22.setText("Numero visitas por mes");
 
-        jTextAreaVisitasPorMes.setColumns(20);
-        jTextAreaVisitasPorMes.setRows(5);
-        jScrollPane2.setViewportView(jTextAreaVisitasPorMes);
-
         jLabelTitulozooDeDatosHabitatN23.setBackground(new java.awt.Color(0, 0, 0));
         jLabelTitulozooDeDatosHabitatN23.setFont(new java.awt.Font("Segoe Script", 3, 14)); // NOI18N
         jLabelTitulozooDeDatosHabitatN23.setForeground(new java.awt.Color(0, 0, 0));
@@ -2147,6 +2171,26 @@ public class Ventana extends javax.swing.JFrame {
             }
         });
 
+        jTextFieldNumeroVisitasTotalesPorMesGestiones.setFont(new java.awt.Font("Segoe Script", 3, 12)); // NOI18N
+        jTextFieldNumeroVisitasTotalesPorMesGestiones.setForeground(new java.awt.Color(0, 0, 0));
+
+        jButtonMostrarEstadisticaNumeroAnimalEspecie.setFont(new java.awt.Font("Segoe Script", 3, 12)); // NOI18N
+        jButtonMostrarEstadisticaNumeroAnimalEspecie.setText("Recargar");
+        jButtonMostrarEstadisticaNumeroAnimalEspecie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonMostrarEstadisticaNumeroAnimalEspecieActionPerformed(evt);
+            }
+        });
+
+        jComboBoxNumeroVisitasMes.setFont(new java.awt.Font("Segoe Script", 3, 12)); // NOI18N
+        jComboBoxNumeroVisitasMes.setForeground(new java.awt.Color(0, 0, 0));
+        jComboBoxNumeroVisitasMes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre", " " }));
+        jComboBoxNumeroVisitasMes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxNumeroVisitasMesActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
@@ -2174,13 +2218,13 @@ public class Ventana extends javax.swing.JFrame {
                                 .addComponent(jLabelTitulozooDeDatosHabitatN23)
                                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(jPanel7Layout.createSequentialGroup()
-                                        .addComponent(jLabelTitulozooDeDatosHabitatN25)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jTextFieldNumeroAnimalesPorHabitat, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel7Layout.createSequentialGroup()
                                         .addComponent(jLabelTitulozooDeDatosHabitatN24)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jComboBoxHabitatParaElNumeroAnimales, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                        .addComponent(jComboBoxHabitatParaElNumeroAnimales, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel7Layout.createSequentialGroup()
+                                        .addComponent(jLabelTitulozooDeDatosHabitatN25)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jTextFieldNumeroAnimalesPorHabitat, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addGap(18, 18, 18)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2225,16 +2269,23 @@ public class Ventana extends javax.swing.JFrame {
                             .addGroup(jPanel7Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabelTitulozooDeDatosHabitatN22)
-                                    .addGroup(jPanel7Layout.createSequentialGroup()
-                                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabelTitulozooDeDatosHabitatN21)
-                                            .addComponent(jLabelTitulozooDeDatosHabitatN20))
-                                        .addGap(33, 33, 33)
-                                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTextFieldNumeroTotalEspecies, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextFieldNumeroDeAnimalesTotales, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(jLabelTitulozooDeDatosHabitatN21)
+                                    .addComponent(jLabelTitulozooDeDatosHabitatN20))
+                                .addGap(33, 33, 33)
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextFieldNumeroTotalEspecies, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldNumeroDeAnimalesTotales, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addGap(46, 46, 46)
+                                .addComponent(jComboBoxNumeroVisitasMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(25, 25, 25)
+                                .addComponent(jTextFieldNumeroVisitasTotalesPorMesGestiones, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addGap(76, 76, 76)
+                                .addComponent(jLabelTitulozooDeDatosHabitatN22))
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addGap(115, 115, 115)
+                                .addComponent(jButtonMostrarEstadisticaNumeroAnimalEspecie)))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(jSeparator2)))
         );
@@ -2290,6 +2341,17 @@ public class Ventana extends javax.swing.JFrame {
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabelTitulozooDeDatosHabitatN23)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jComboBoxHabitatParaElNumeroAnimales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelTitulozooDeDatosHabitatN24))
+                        .addGap(27, 27, 27)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldNumeroAnimalesPorHabitat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelTitulozooDeDatosHabitatN25)))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGap(1, 1, 1)
                         .addComponent(jLabelTitulozooDeDatosHabitatN19)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -2300,22 +2362,15 @@ public class Ventana extends javax.swing.JFrame {
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabelTitulozooDeDatosHabitatN21)
                             .addComponent(jTextFieldNumeroTotalEspecies, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(7, 7, 7)
-                        .addComponent(jLabelTitulozooDeDatosHabitatN22))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabelTitulozooDeDatosHabitatN23)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jComboBoxHabitatParaElNumeroAnimales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelTitulozooDeDatosHabitatN24))
-                        .addGap(27, 27, 27)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextFieldNumeroAnimalesPorHabitat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelTitulozooDeDatosHabitatN25))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
+                        .addComponent(jButtonMostrarEstadisticaNumeroAnimalEspecie)))
+                .addGap(8, 8, 8)
+                .addComponent(jLabelTitulozooDeDatosHabitatN22)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldNumeroVisitasTotalesPorMesGestiones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBoxNumeroVisitasMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(23, Short.MAX_VALUE))
             .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
@@ -2478,6 +2533,11 @@ public class Ventana extends javax.swing.JFrame {
         
             String alimentacionAnimalNuevo=this.jTextFieldModificarAlimentacionAnimal.getText();
             buscado.setAlimentacion(alimentacionAnimalNuevo);
+            
+            Cuidador cuidadorSeleccionado =(Cuidador) this.jComboBoxCuidadoresParaModificar.getSelectedItem();
+            if(cuidadorSeleccionado !=null){
+                buscado.setCuidador(cuidadorSeleccionado);
+            }
         
             this.jLabelEstado.setText("El animal se ha modificado");
             this.jComboBoxAnimalesAsiganarHabitat.removeItem(nombreAnimal);
@@ -2677,6 +2737,7 @@ public class Ventana extends javax.swing.JFrame {
             //Tengo que crear el combobox par añadir el habitat en lo de modificar
             this.jComboBoxVerHabitat.addItem(nombreHabitat);
             this.jComboBoxHabitatGestionGeneral.addItem(nombreHabitat);
+            this.jComboBoxHabitatParaElNumeroAnimales.addItem(nombreHabitat);
             
             //limpiar todo
             this.jTextFieldNombreHabitat.setText("");
@@ -2711,6 +2772,7 @@ public class Ventana extends javax.swing.JFrame {
     private void jComboBoxVerHabitatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxVerHabitatActionPerformed
         String nombreHabitat=(String) this.jComboBoxVerHabitat.getSelectedItem();
         Habitat buscado=this.miZoo.buscarHabitat(nombreHabitat);
+        
         if(buscado==null){
             this.jLabelEstado.setText("No se encontro ningun habitat");
         }else{
@@ -2727,24 +2789,35 @@ public class Ventana extends javax.swing.JFrame {
         String nombreHabitat=(String)this.jComboBoxVerHabitat.getSelectedItem();
         int indice=this.jComboBoxVerHabitat.getSelectedIndex();
         Habitat buscado=this.miZoo.buscarHabitat(nombreHabitat);
+        
         if(buscado==null){
             this.jLabelEstado.setText("No hay un habitat a modificar");
         }else{
-        String nombreHabitatNuevo=this.jTextFieldVerNombreHabitat.getText();
-        buscado.setNombre(nombreHabitatNuevo);
-        String climaHabitatNuevo=this.jTextFieldVerClimaHabitat.getText();
-        buscado.setClima(climaHabitatNuevo);
-        int tamañoHabitatNuevo=Integer.parseInt(this.jTextFieldVerTamañoHabitat.getText());
-        buscado.setTamaño(tamañoHabitatNuevo);
-        int capacidadHabitatNuevo=Integer.parseInt(this.jTextFieldVerCapacidadHabitat.getText());
-        buscado.setCapacidad(capacidadHabitatNuevo);
-        int numeroAnimalesNuevo= (int) this.jSpinnerVerNumeroDeAnimalesHabitat.getValue();
-        buscado.setNumeroAnimales(numeroAnimalesNuevo);
-        this.jLabelEstado.setText("El habitat se ha modificado");
-        this.jComboBoxHabitatGestionGeneral.removeItem(indice);
-        this.jComboBoxHabitatGestionGeneral.addItem(nombreHabitatNuevo);
-        this.jComboBoxVerHabitat.removeItemAt(indice);
-        this.jComboBoxVerHabitat.addItem(nombreHabitatNuevo);
+            String nombreHabitatNuevo=this.jTextFieldVerNombreHabitat.getText();
+            buscado.setNombre(nombreHabitatNuevo);
+            
+            String climaHabitatNuevo=this.jTextFieldVerClimaHabitat.getText();
+            buscado.setClima(climaHabitatNuevo);
+            
+            int tamañoHabitatNuevo=Integer.parseInt(this.jTextFieldVerTamañoHabitat.getText());
+            buscado.setTamaño(tamañoHabitatNuevo);
+            
+            int capacidadHabitatNuevo=Integer.parseInt(this.jTextFieldVerCapacidadHabitat.getText());
+            buscado.setCapacidad(capacidadHabitatNuevo);
+            
+            int numeroAnimalesNuevo= (int) this.jSpinnerVerNumeroDeAnimalesHabitat.getValue();
+            buscado.setNumeroAnimales(numeroAnimalesNuevo);
+            
+            this.jLabelEstado.setText("El habitat se ha modificado");
+            
+            this.jComboBoxHabitatGestionGeneral.removeItem(indice);
+            this.jComboBoxHabitatGestionGeneral.addItem(nombreHabitatNuevo);
+            
+            this.jComboBoxHabitatParaElNumeroAnimales.removeItem(indice);
+            this.jComboBoxHabitatParaElNumeroAnimales.addItem(nombreHabitat);
+            
+            this.jComboBoxVerHabitat.removeItemAt(indice);
+            this.jComboBoxVerHabitat.addItem(nombreHabitatNuevo);
         }
     }//GEN-LAST:event_jButtonEditarHabitatActionPerformed
 
@@ -2756,6 +2829,7 @@ public class Ventana extends javax.swing.JFrame {
         }else{
             this.miZoo.eliminarHabitat(nombreHabitat);
             this.jComboBoxHabitatGestionGeneral.removeItem(nombreHabitat);
+             this.jComboBoxHabitatParaElNumeroAnimales.removeItem(nombreHabitat);
             this.jComboBoxVerHabitat.removeItem(nombreHabitat);
             
             this.jTextFieldVerNombreHabitat.setText("");
@@ -2804,7 +2878,13 @@ public class Ventana extends javax.swing.JFrame {
         if(nuevo instanceof Guia){
             this.jComboBoxNombreGuiaVisita.addItem((Guia) nuevo); 
         }
+        
+        if (nuevo instanceof Cuidador) {
+            this.jComboBoxCuidadoresParaModificar.addItem((Cuidador) nuevo);
+        }
+
         this.jLabelEstado.setText("Personal añadido");
+        
         
         this.jTextFieldNombrePersonal.setText("");
         this.jTextFieldSalarioPersonal.setText("");
@@ -2916,6 +2996,10 @@ public class Ventana extends javax.swing.JFrame {
             this.jComboBoxVerPersonal.removeItemAt(indice);
             this.jComboBoxVerPersonal.addItem(nuevoNombre);
             
+            if (buscado instanceof Cuidador) {
+                this.jComboBoxCuidadoresParaModificar.removeItem(buscado);
+                this.jComboBoxCuidadoresParaModificar.addItem((Cuidador) buscado);
+            }
             if(buscado instanceof Guia){
                 this.jComboBoxNombreGuiaVisita.removeItemAt(indice);
                 this.jComboBoxNombreGuiaVisita.removeItem(buscado);
@@ -2935,15 +3019,24 @@ public class Ventana extends javax.swing.JFrame {
         }else{
             Personal persona = this.miZoo.buscarPersonal(nombrePersona);
             Guia guiaEliminado = null;
+            Cuidador cuidadorEliminado = null;
             if(persona instanceof Guia){
                 for (int i = 0; i < this.jComboBoxNombreGuiaVisita.getItemCount(); i++){
                     Guia gui = this.jComboBoxNombreGuiaVisita.getItemAt(i);
                     if(gui.getNombre().equalsIgnoreCase(nombrePersona)){
                         guiaEliminado = gui;
-                        break;
+                    }
                 }
             }
-        }
+            if(persona instanceof Cuidador){
+                for(int i = 0; i < this.jComboBoxCuidadoresParaModificar.getItemCount(); i++){
+                Cuidador cui = this.jComboBoxCuidadoresParaModificar.getItemAt(i);
+                    if(cui.getNombre().equalsIgnoreCase(nombrePersona)){
+                        cuidadorEliminado = cui;
+
+                    }
+                }
+            }
             this.miZoo.eliminarPersonal(nombrePersona);
             
             this.jComboBoxVerPersonal.removeItem(nombrePersona);
@@ -2960,6 +3053,10 @@ public class Ventana extends javax.swing.JFrame {
             
             if(guiaEliminado != null){
                 this.jComboBoxNombreGuiaVisita.removeItem(guiaEliminado);
+            }
+            
+            if(cuidadorEliminado != null){
+                this.jComboBoxCuidadoresParaModificar.removeItem(cuidadorEliminado);
             }
 
             this.jLabelEstado.setText("El empleado " + nombrePersona + " se elimino");
@@ -2990,7 +3087,7 @@ public class Ventana extends javax.swing.JFrame {
         String recorrido = this.jTextFieldRecorridoVisita.getText();
         
         Visitas nuevaVisita = new Visitas(fecha, numeroVisitantes, guiaSeleccionado, recorrido);
-        this.miZoo.añadirVisita(nuevaVisita);
+        
         
         if(this.miZoo==null){
             this.jLabelEstado.setText("Aun no se ha creado la visita.");
@@ -3150,10 +3247,55 @@ public class Ventana extends javax.swing.JFrame {
                     this.jComboBoxFiltradoHabitatNombres.addItem(animal.getNombreAnimal());
                 }
                 this.jLabelEstado.setText("Animales filtrados por habitat");
+                this.jTextFieldHabitatParaFiltar.setText("");
             }
         }
     }//GEN-LAST:event_jButtonFiltrarHabitatActionPerformed
 
+    private void jComboBoxCuidadoresParaModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxCuidadoresParaModificarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxCuidadoresParaModificarActionPerformed
+
+    private void jComboBoxHabitatParaElNumeroAnimalesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxHabitatParaElNumeroAnimalesActionPerformed
+        String nombreHabitat = (String) this.jComboBoxHabitatParaElNumeroAnimales.getSelectedItem();
+
+    if (nombreHabitat == null) {
+        this.jLabelEstado.setText("No se ha seleccionado ningún hábitat.");
+    } else {
+        Habitat habitat = this.miZoo.buscarHabitat(nombreHabitat);
+        int cantidad = habitat.getNumeroAnimales();
+
+        this.jTextFieldNumeroAnimalesPorHabitat.setText(String.valueOf(cantidad));
+        this.jLabelEstado.setText("Hábitat cargado correctamente.");
+    }
+    }//GEN-LAST:event_jComboBoxHabitatParaElNumeroAnimalesActionPerformed
+
+    private void jButtonMostrarEstadisticaNumeroAnimalEspecieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMostrarEstadisticaNumeroAnimalEspecieActionPerformed
+        int totalAnimales = this.miZoo.contarAnimales();
+        int totalEspecies = this.miZoo.contarEspecies();
+
+        this.jTextFieldNumeroDeAnimalesTotales.setText(String.valueOf(totalAnimales));
+        this.jTextFieldNumeroTotalEspecies.setText(String.valueOf(totalEspecies));
+
+        this.jLabelEstado.setText("Datos del numero de animales y especies mostrados.");
+    }//GEN-LAST:event_jButtonMostrarEstadisticaNumeroAnimalEspecieActionPerformed
+
+    private void jComboBoxNumeroVisitasMesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxNumeroVisitasMesActionPerformed
+        int index = jComboBoxNumeroVisitasMes.getSelectedIndex();
+
+        if (index >= 0){
+            int mesSeleccionado = index + 1; 
+            int visitas = miZoo.contarVisitasPorMes(mesSeleccionado);
+
+            jTextFieldNumeroVisitasTotalesPorMesGestiones.setText(String.valueOf(visitas));
+            jLabelEstado.setText("Visitas encontradas en el mes seleccionado");
+            
+        }else{
+            jLabelEstado.setText("Selecciona un mes válido");
+        }
+    }//GEN-LAST:event_jComboBoxNumeroVisitasMesActionPerformed
+
+    
     
     /**
      * @param args the command line arguments
@@ -3213,16 +3355,19 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JButton jButtonFiltrarHabitat;
     private javax.swing.JButton jButtonModificarAnimal;
     private javax.swing.JButton jButtonModificarZoo;
+    private javax.swing.JButton jButtonMostrarEstadisticaNumeroAnimalEspecie;
     private javax.swing.JButton jButtonVerTodoLosDatosZoo;
     private javax.swing.JComboBox<String> jComboBoxAnimalesAsiganarHabitat;
     private javax.swing.JComboBox<String> jComboBoxAnimalesParaModificar;
     private javax.swing.JComboBox<String> jComboBoxCiudadesZoo;
+    private javax.swing.JComboBox<Cuidador> jComboBoxCuidadoresParaModificar;
     private javax.swing.JComboBox<String> jComboBoxFiltradoEdadNombres;
     private javax.swing.JComboBox<String> jComboBoxFiltradoEspecieNombres;
     private javax.swing.JComboBox<String> jComboBoxFiltradoHabitatNombres;
     private javax.swing.JComboBox<String> jComboBoxHabitatGestionGeneral;
     private javax.swing.JComboBox<String> jComboBoxHabitatParaElNumeroAnimales;
     private javax.swing.JComboBox<Guia> jComboBoxNombreGuiaVisita;
+    private javax.swing.JComboBox<String> jComboBoxNumeroVisitasMes;
     private javax.swing.JComboBox<String> jComboBoxVerCiudadZoo;
     private javax.swing.JComboBox<String> jComboBoxVerFechaVisitas;
     private javax.swing.JComboBox<String> jComboBoxVerHabitat;
@@ -3263,6 +3408,7 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelSuperficieZoo;
     private javax.swing.JLabel jLabelTextoAlimentacion;
     private javax.swing.JLabel jLabelTextoAlimentacion1;
+    private javax.swing.JLabel jLabelTextoAlimentacion2;
     private javax.swing.JLabel jLabelTextoCapacidad;
     private javax.swing.JLabel jLabelTextoCapacidad1;
     private javax.swing.JLabel jLabelTextoClima;
@@ -3356,7 +3502,6 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButtonVerNoche;
     private javax.swing.JRadioButton jRadioButtonVerTarde;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
@@ -3367,7 +3512,6 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JSpinner jSpinnerVerNumeroDeAnimalesHabitat;
     private javax.swing.JTabbedPane jTabbedPanel1;
     private javax.swing.JTextArea jTextAreaVerZooCompleto;
-    private javax.swing.JTextArea jTextAreaVisitasPorMes;
     private javax.swing.JTextField jTextFieldArchivoImagenAnimal;
     private javax.swing.JTextField jTextFieldCapacidadHabitat;
     private javax.swing.JTextField jTextFieldClimaHabitat;
@@ -3388,6 +3532,7 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldNumeroAnimalesPorHabitat;
     private javax.swing.JTextField jTextFieldNumeroDeAnimalesTotales;
     private javax.swing.JTextField jTextFieldNumeroTotalEspecies;
+    private javax.swing.JTextField jTextFieldNumeroVisitasTotalesPorMesGestiones;
     private javax.swing.JTextField jTextFieldRecorridoVisita;
     private javax.swing.JTextField jTextFieldSalarioPersonal;
     private javax.swing.JTextField jTextFieldSuperficieZoo;

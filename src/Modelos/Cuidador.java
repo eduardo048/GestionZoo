@@ -32,7 +32,7 @@ public class Cuidador extends Personal implements Serializable {
     //Mostrar cuidadores
     @Override
     public String toString() {
-        String texto = super.toString() + " | Experiencia: " + experiencia + " años";
+        String texto = this.getNombre();
        return texto; 
     }  
     

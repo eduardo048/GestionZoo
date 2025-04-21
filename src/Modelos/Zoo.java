@@ -88,6 +88,8 @@ public class Zoo  implements Serializable {
     
     
     
+    
+    
 
     @Override
     public String toString() {
@@ -286,4 +288,39 @@ public class Zoo  implements Serializable {
         return resultado;    
     }
     
+    //Contar el numero de animales
+    public int contarAnimales(){
+        return this.animales.size();
+    }
+    
+    //Contar especies de animales
+    public int contarEspecies(){
+        ArrayList<String> especies = new ArrayList<>();
+        
+        for(int i=0; i<this.animales.size(); i++){
+            Animal animal = this.animales.get(i);
+            String especie = animal.getEspecie();
+            
+            if(!especies.contains(especie)){
+                especies.add(especie);
+            }
+        }
+        return especies.size();
+    }
+    
+    //Contar VisitasPorMes
+    public int contarVisitasPorMes(int mes){
+        int contador = 0;
+        
+        for(int i=0; i<this.visitas.size(); i++){
+            Visitas visita = this.visitas.get(i);
+            int mesVisita = visita.getFecha().getMonthValue();
+            
+            if(mesVisita == mes){
+                contador++;
+            }
+        }
+        return contador;
+    }
+   
 }

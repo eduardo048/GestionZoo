@@ -85,6 +85,8 @@ public class Animal implements Serializable {
     public void setImagen(String imagen) {
         this.imagen = imagen;
     }
+    
+    
 
     //Mostras animales
     @Override
