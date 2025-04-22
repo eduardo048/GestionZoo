@@ -31,7 +31,7 @@ public class Archivos {
         oos.close();
         fos.close();
     }
-    
+    //Metodo para leer el zoo 
     public Zoo leerZoo(File elegido) throws FileNotFoundException, IOException, ClassNotFoundException{
 
         FileInputStream fis = new FileInputStream(elegido);

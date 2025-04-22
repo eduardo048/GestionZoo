@@ -4,13 +4,14 @@
  */
 package Modelos;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 /**
  *
  * @author eduar
  */
-public class Visitas {
+public class Visitas implements Serializable {
     private LocalDate fecha;
     private int numVisitantes;
     private Guia guia;

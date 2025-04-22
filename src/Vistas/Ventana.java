@@ -256,6 +256,17 @@ public class Ventana extends javax.swing.JFrame {
         jMenuArchivos = new javax.swing.JMenu();
         jMenuItemGuardarZoo = new javax.swing.JMenuItem();
         jMenuItemLeerZoo = new javax.swing.JMenuItem();
+        jSeparator5 = new javax.swing.JPopupMenu.Separator();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jSeparator6 = new javax.swing.JPopupMenu.Separator();
+        jMenuItem6 = new javax.swing.JMenuItem();
+        jMenuItem7 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -347,7 +358,7 @@ public class Ventana extends javax.swing.JFrame {
             .addGroup(jPanelIntroducirDatosZooLayout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addGroup(jPanelIntroducirDatosZooLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabelSuperficieZoo, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
+                    .addComponent(jLabelSuperficieZoo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabelCiudadZoo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabelNombreZoo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -451,7 +462,7 @@ public class Ventana extends javax.swing.JFrame {
             .addGroup(jPanelVerZooLayout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addGroup(jPanelVerZooLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -2434,8 +2445,39 @@ public class Ventana extends javax.swing.JFrame {
             }
         });
         jMenuArchivos.add(jMenuItemLeerZoo);
+        jMenuArchivos.add(jSeparator5);
+
+        jMenuItem1.setText("Guardar archivo animales.txt ");
+        jMenuArchivos.add(jMenuItem1);
+
+        jMenuItem2.setText("Mostrar archivo animal.txt");
+        jMenuArchivos.add(jMenuItem2);
 
         jMenuBar1.add(jMenuArchivos);
+
+        jMenu1.setText("Salir");
+
+        jMenuItem3.setText("Salir");
+        jMenu1.add(jMenuItem3);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("BDD");
+
+        jMenuItem4.setText("Guardar tabla animales");
+        jMenu2.add(jMenuItem4);
+
+        jMenuItem5.setText("Mostrar animales");
+        jMenu2.add(jMenuItem5);
+        jMenu2.add(jSeparator6);
+
+        jMenuItem6.setText("Guardar tabla Personal");
+        jMenu2.add(jMenuItem6);
+
+        jMenuItem7.setText("Mostrar personal");
+        jMenu2.add(jMenuItem7);
+
+        jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
 
@@ -2580,10 +2622,43 @@ public class Ventana extends javax.swing.JFrame {
             
             //Actualizar para que no deje crear mas zoos
             this.jButtonCrearZooBoton.setEnabled(false);
-            
+            //Ingresar datos principales del zoo
             this.jTextFieldVeerNombreZoo.setText(miZoo.getNombreZoo());
+            this.jTextFieldVerSuperficieZoo.setText(Integer.toString(miZoo.getSuperficie()));
+            this.jComboBoxVerCiudadZoo.setSelectedItem(miZoo.getCiudad());
             
+            //Ingresar datos de los animales
+            ArrayList<Animal> listaAnimales = miZoo.getAnimales();
+            for(Animal animal: listaAnimales){
+                this.jComboBoxAnimalesParaModificar.addItem(animal.getNombreAnimal());
+                this.jComboBoxAnimalesAsiganarHabitat.addItem(animal.getNombreAnimal());
+            }
             
+            //Ingresar datos de los habitat
+            ArrayList<Habitat> listaHabitat = miZoo.getHabitats();
+            for(Habitat habitat : listaHabitat){
+                this.jComboBoxVerHabitat.addItem(habitat.getNombre());
+                this.jComboBoxHabitatGestionGeneral.addItem(habitat.getNombre());
+                this.jComboBoxHabitatParaElNumeroAnimales.addItem(habitat.getNombre());
+            }
+            
+            //Ingresar datos de empleados
+            ArrayList<Personal> listaPersonal = miZoo.getPersonal();
+            for(Personal personal: listaPersonal){
+                this.jComboBoxVerPersonal.addItem(personal.getNombre());
+            }
+            //guia
+            for(Personal guia : listaPersonal){
+                if(guia instanceof Guia){
+                    this.jComboBoxNombreGuiaVisita.addItem((Guia) guia );
+                }
+            }
+            //cuidador
+            for(Personal cuidador : listaPersonal){
+                if(cuidador instanceof Cuidador){
+                    this.jComboBoxCuidadoresParaModificar.addItem((Cuidador) cuidador);
+                }
+            }   
         }catch (FileNotFoundException  ex1) {
             this.jLabelEstado.setText("ERROR: No se ha encontrado el archivo");
         }catch (ClassNotFoundException ex1) {
@@ -3455,8 +3530,17 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelTitulozooDeDatosZoo;
     private javax.swing.JLabel jLabelVerEmpleado;
     private javax.swing.JLabel jLabelVerImagenAnimal;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenuArchivos;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItemGuardarZoo;
     private javax.swing.JMenuItem jMenuItemLeerZoo;
     private javax.swing.JPanel jPanel1;
@@ -3506,6 +3590,8 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JPopupMenu.Separator jSeparator5;
+    private javax.swing.JPopupMenu.Separator jSeparator6;
     private javax.swing.JSlider jSliderEdadAnimal;
     private javax.swing.JSpinner jSpinnerNumeroDeAnimalesHabitat;
     private javax.swing.JSpinner jSpinnerNumeroVisitantes;
