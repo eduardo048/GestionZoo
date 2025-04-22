@@ -105,7 +105,7 @@ public class Ventana extends javax.swing.JFrame {
         jLabelVerImagenAnimal = new javax.swing.JLabel();
         jLabelTextoAlimentacion2 = new javax.swing.JLabel();
         jComboBoxCuidadoresParaModificar = new javax.swing.JComboBox<>();
-        jPanel2 = new javax.swing.JPanel();
+        jPanelGestionHabitat = new javax.swing.JPanel();
         jPanelIntroducirDatosHabitat = new javax.swing.JPanel();
         jLabelTitulozooDeDatosHabitatN = new javax.swing.JLabel();
         jLabelNombreHabitat = new javax.swing.JLabel();
@@ -136,7 +136,7 @@ public class Ventana extends javax.swing.JFrame {
         jTextFieldVerCapacidadHabitat = new javax.swing.JTextField();
         jLabelAnimalesHabitat1 = new javax.swing.JLabel();
         jSpinnerVerNumeroDeAnimalesHabitat = new javax.swing.JSpinner();
-        jPanel3 = new javax.swing.JPanel();
+        jPanelGestionPersonal = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jPanelIntroducirDatosHabitat1 = new javax.swing.JPanel();
         jLabelTitulozooDeDatosHabitatN1 = new javax.swing.JLabel();
@@ -178,7 +178,7 @@ public class Ventana extends javax.swing.JFrame {
         jRadioButtonVerLimpiadorPersonal = new javax.swing.JRadioButton();
         jLabelVerEmpleado = new javax.swing.JLabel();
         jTextFieldVerExtraEmpleado = new javax.swing.JTextField();
-        jPanel5 = new javax.swing.JPanel();
+        jPanelGestionVisitas = new javax.swing.JPanel();
         jPanelIntroducirDatosHabitat2 = new javax.swing.JPanel();
         jLabelTitulozooDeDatosHabitatN2 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
@@ -212,7 +212,7 @@ public class Ventana extends javax.swing.JFrame {
         jTextFieldVerFechaInicioVisita = new javax.swing.JTextField();
         jTextFieldVerFechaFinalVisitas = new javax.swing.JTextField();
         jButtonBuscarVisita = new javax.swing.JButton();
-        jPanel6 = new javax.swing.JPanel();
+        jPanelOtrasGestiones = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jLabelTitulozooDeDatosHabitatN12 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
@@ -250,6 +250,20 @@ public class Ventana extends javax.swing.JFrame {
         jTextFieldNumeroVisitasTotalesPorMesGestiones = new javax.swing.JTextField();
         jButtonMostrarEstadisticaNumeroAnimalEspecie = new javax.swing.JButton();
         jComboBoxNumeroVisitasMes = new javax.swing.JComboBox<>();
+        jPanelMostrarAnimales = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextAreaMostrarAnimalCuidadores = new javax.swing.JTextArea();
+        jLabelTitulozooDeDatosHabitatN26 = new javax.swing.JLabel();
+        jPanelBDDAnimalesEmpleados = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
+        jLabelTitulozooDeDatosHabitatN27 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTextAreaDatosAnimalesBDD = new javax.swing.JTextArea();
+        jPanel8 = new javax.swing.JPanel();
+        jLabelTitulozooDeDatosHabitatN28 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTextAreaDatosEmpleadosBDD = new javax.swing.JTextArea();
         jPanel1 = new javax.swing.JPanel();
         jLabelEstado = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -257,16 +271,16 @@ public class Ventana extends javax.swing.JFrame {
         jMenuItemGuardarZoo = new javax.swing.JMenuItem();
         jMenuItemLeerZoo = new javax.swing.JMenuItem();
         jSeparator5 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItemGuardarAnimalArchivo = new javax.swing.JMenuItem();
+        jMenuItemMostrarAnimalArchivo = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItemSalir = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItemGuardarTablaAnimalesBDD = new javax.swing.JMenuItem();
+        jMenuItemMostrarAnimalBDD = new javax.swing.JMenuItem();
         jSeparator6 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
+        jMenuItemGuardarTablaPersonalBDD = new javax.swing.JMenuItem();
+        jMenuItemMostrarPersonalBDD = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -530,7 +544,7 @@ public class Ventana extends javax.swing.JFrame {
                 .addGroup(jPanelGestionZooLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanelIntroducirDatosZoo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanelVerZoo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPanel1.addTab("Zoo", jPanelGestionZoo);
@@ -859,7 +873,7 @@ public class Ventana extends javax.swing.JFrame {
                 .addGroup(jPanelVerAnimalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonModificarAnimal)
                     .addComponent(jButtonEliminarAnimal))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanelGestionAnimalLayout = new javax.swing.GroupLayout(jPanelGestionAnimal);
@@ -885,8 +899,8 @@ public class Ventana extends javax.swing.JFrame {
 
         jTabbedPanel1.addTab("Animal", jPanelGestionAnimal);
 
-        jPanel2.setBackground(new java.awt.Color(204, 255, 204));
-        jPanel2.setPreferredSize(new java.awt.Dimension(358, 420));
+        jPanelGestionHabitat.setBackground(new java.awt.Color(204, 255, 204));
+        jPanelGestionHabitat.setPreferredSize(new java.awt.Dimension(358, 420));
 
         jPanelIntroducirDatosHabitat.setBackground(new java.awt.Color(153, 255, 204));
         jPanelIntroducirDatosHabitat.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
@@ -998,7 +1012,7 @@ public class Ventana extends javax.swing.JFrame {
                 .addGroup(jPanelIntroducirDatosHabitatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabelTextoTamaño)
                     .addComponent(jTextFieldTamañoHabitat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addGroup(jPanelIntroducirDatosHabitatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelTextoCapacidad, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jTextFieldCapacidadHabitat, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1136,7 +1150,7 @@ public class Ventana extends javax.swing.JFrame {
                     .addComponent(jTextFieldVerTamañoHabitat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanelIntroducirDatosAnimales2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelIntroducirDatosAnimales2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
                         .addComponent(jLabel13)
                         .addGap(105, 105, 105))
                     .addGroup(jPanelIntroducirDatosAnimales2Layout.createSequentialGroup()
@@ -1155,28 +1169,28 @@ public class Ventana extends javax.swing.JFrame {
                 .addGap(19, 19, 19))
         );
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanelGestionHabitatLayout = new javax.swing.GroupLayout(jPanelGestionHabitat);
+        jPanelGestionHabitat.setLayout(jPanelGestionHabitatLayout);
+        jPanelGestionHabitatLayout.setHorizontalGroup(
+            jPanelGestionHabitatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelGestionHabitatLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jPanelIntroducirDatosHabitat, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanelIntroducirDatosAnimales2, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(23, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        jPanelGestionHabitatLayout.setVerticalGroup(
+            jPanelGestionHabitatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelGestionHabitatLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelGestionHabitatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanelIntroducirDatosHabitat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanelIntroducirDatosAnimales2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(36, 36, 36))
         );
 
-        jTabbedPanel1.addTab("Habitat", jPanel2);
+        jTabbedPanel1.addTab("Habitat", jPanelGestionHabitat);
 
         jPanel4.setBackground(new java.awt.Color(204, 255, 204));
 
@@ -1624,23 +1638,23 @@ public class Ventana extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jPanelIntroducirDatosAnimales3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanelIntroducirDatosHabitat1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jPanelGestionPersonalLayout = new javax.swing.GroupLayout(jPanelGestionPersonal);
+        jPanelGestionPersonal.setLayout(jPanelGestionPersonalLayout);
+        jPanelGestionPersonalLayout.setHorizontalGroup(
+            jPanelGestionPersonalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanelGestionPersonalLayout.setVerticalGroup(
+            jPanelGestionPersonalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jTabbedPanel1.addTab("Personal", jPanel3);
+        jTabbedPanel1.addTab("Personal", jPanelGestionPersonal);
 
-        jPanel5.setBackground(new java.awt.Color(204, 255, 204));
+        jPanelGestionVisitas.setBackground(new java.awt.Color(204, 255, 204));
 
         jPanelIntroducirDatosHabitat2.setBackground(new java.awt.Color(153, 255, 204));
         jPanelIntroducirDatosHabitat2.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
@@ -1996,30 +2010,30 @@ public class Ventana extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanelGestionVisitasLayout = new javax.swing.GroupLayout(jPanelGestionVisitas);
+        jPanelGestionVisitas.setLayout(jPanelGestionVisitasLayout);
+        jPanelGestionVisitasLayout.setHorizontalGroup(
+            jPanelGestionVisitasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelGestionVisitasLayout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addComponent(jPanelIntroducirDatosHabitat2, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanelIntroducirDatosHabitat3, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(23, Short.MAX_VALUE))
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+        jPanelGestionVisitasLayout.setVerticalGroup(
+            jPanelGestionVisitasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelGestionVisitasLayout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanelGestionVisitasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPanelIntroducirDatosHabitat3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanelIntroducirDatosHabitat2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(22, 22, 22))
         );
 
-        jTabbedPanel1.addTab("Visitas", jPanel5);
+        jTabbedPanel1.addTab("Visitas", jPanelGestionVisitas);
 
-        jPanel6.setBackground(new java.awt.Color(204, 255, 204));
+        jPanelOtrasGestiones.setBackground(new java.awt.Color(204, 255, 204));
 
         jPanel7.setBackground(new java.awt.Color(153, 255, 204));
         jPanel7.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
@@ -2381,28 +2395,184 @@ public class Ventana extends javax.swing.JFrame {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldNumeroVisitasTotalesPorMesGestiones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBoxNumeroVisitasMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
+
+        javax.swing.GroupLayout jPanelOtrasGestionesLayout = new javax.swing.GroupLayout(jPanelOtrasGestiones);
+        jPanelOtrasGestiones.setLayout(jPanelOtrasGestionesLayout);
+        jPanelOtrasGestionesLayout.setHorizontalGroup(
+            jPanelOtrasGestionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelOtrasGestionesLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 660, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(8, Short.MAX_VALUE))
+        );
+        jPanelOtrasGestionesLayout.setVerticalGroup(
+            jPanelOtrasGestionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelOtrasGestionesLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jTabbedPanel1.addTab("Otras Gestiones", jPanelOtrasGestiones);
+
+        jPanelMostrarAnimales.setBackground(new java.awt.Color(204, 255, 204));
+
+        jPanel3.setBackground(new java.awt.Color(153, 255, 204));
+        jPanel3.setForeground(new java.awt.Color(0, 0, 0));
+
+        jTextAreaMostrarAnimalCuidadores.setColumns(20);
+        jTextAreaMostrarAnimalCuidadores.setFont(new java.awt.Font("Segoe Script", 3, 12)); // NOI18N
+        jTextAreaMostrarAnimalCuidadores.setForeground(new java.awt.Color(0, 0, 0));
+        jTextAreaMostrarAnimalCuidadores.setRows(5);
+        jScrollPane2.setViewportView(jTextAreaMostrarAnimalCuidadores);
+
+        jLabelTitulozooDeDatosHabitatN26.setBackground(new java.awt.Color(0, 0, 0));
+        jLabelTitulozooDeDatosHabitatN26.setFont(new java.awt.Font("Segoe Script", 3, 14)); // NOI18N
+        jLabelTitulozooDeDatosHabitatN26.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelTitulozooDeDatosHabitatN26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelTitulozooDeDatosHabitatN26.setText("Animales y sus Cuidadores");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabelTitulozooDeDatosHabitatN26, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(70, 70, 70))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(16, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabelTitulozooDeDatosHabitatN26, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23))
+        );
+
+        javax.swing.GroupLayout jPanelMostrarAnimalesLayout = new javax.swing.GroupLayout(jPanelMostrarAnimales);
+        jPanelMostrarAnimales.setLayout(jPanelMostrarAnimalesLayout);
+        jPanelMostrarAnimalesLayout.setHorizontalGroup(
+            jPanelMostrarAnimalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelMostrarAnimalesLayout.createSequentialGroup()
+                .addGap(105, 105, 105)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(151, Short.MAX_VALUE))
+        );
+        jPanelMostrarAnimalesLayout.setVerticalGroup(
+            jPanelMostrarAnimalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelMostrarAnimalesLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 471, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jTabbedPanel1.addTab("Mostrar Animales.txt", jPanelMostrarAnimales);
+
+        jPanelBDDAnimalesEmpleados.setBackground(new java.awt.Color(204, 255, 204));
+
+        jPanel6.setBackground(new java.awt.Color(153, 255, 204));
+
+        jLabelTitulozooDeDatosHabitatN27.setBackground(new java.awt.Color(0, 0, 0));
+        jLabelTitulozooDeDatosHabitatN27.setFont(new java.awt.Font("Segoe Script", 3, 14)); // NOI18N
+        jLabelTitulozooDeDatosHabitatN27.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelTitulozooDeDatosHabitatN27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelTitulozooDeDatosHabitatN27.setText("Datos de los animales ");
+
+        jTextAreaDatosAnimalesBDD.setColumns(20);
+        jTextAreaDatosAnimalesBDD.setFont(new java.awt.Font("Segoe Script", 3, 12)); // NOI18N
+        jTextAreaDatosAnimalesBDD.setForeground(new java.awt.Color(0, 0, 0));
+        jTextAreaDatosAnimalesBDD.setRows(5);
+        jScrollPane3.setViewportView(jTextAreaDatosAnimalesBDD);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 660, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(8, Short.MAX_VALUE))
+                .addGap(15, 15, 15)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabelTitulozooDeDatosHabitatN27, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addContainerGap()
+                .addComponent(jLabelTitulozooDeDatosHabitatN27, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 394, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
-        jTabbedPanel1.addTab("Otras Gestiones", jPanel6);
+        jPanel8.setBackground(new java.awt.Color(153, 255, 204));
+
+        jLabelTitulozooDeDatosHabitatN28.setBackground(new java.awt.Color(0, 0, 0));
+        jLabelTitulozooDeDatosHabitatN28.setFont(new java.awt.Font("Segoe Script", 3, 14)); // NOI18N
+        jLabelTitulozooDeDatosHabitatN28.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelTitulozooDeDatosHabitatN28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelTitulozooDeDatosHabitatN28.setText("Datos de los Empleados");
+
+        jTextAreaDatosEmpleadosBDD.setColumns(20);
+        jTextAreaDatosEmpleadosBDD.setFont(new java.awt.Font("Segoe Script", 3, 12)); // NOI18N
+        jTextAreaDatosEmpleadosBDD.setForeground(new java.awt.Color(0, 0, 0));
+        jTextAreaDatosEmpleadosBDD.setRows(5);
+        jScrollPane4.setViewportView(jTextAreaDatosEmpleadosBDD);
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane4)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addComponent(jLabelTitulozooDeDatosHabitatN28, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 11, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelTitulozooDeDatosHabitatN28, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 394, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(17, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanelBDDAnimalesEmpleadosLayout = new javax.swing.GroupLayout(jPanelBDDAnimalesEmpleados);
+        jPanelBDDAnimalesEmpleados.setLayout(jPanelBDDAnimalesEmpleadosLayout);
+        jPanelBDDAnimalesEmpleadosLayout.setHorizontalGroup(
+            jPanelBDDAnimalesEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelBDDAnimalesEmpleadosLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(34, Short.MAX_VALUE))
+        );
+        jPanelBDDAnimalesEmpleadosLayout.setVerticalGroup(
+            jPanelBDDAnimalesEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelBDDAnimalesEmpleadosLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(jPanelBDDAnimalesEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jTabbedPanel1.addTab("BDD", jPanelBDDAnimalesEmpleados);
 
         jPanel1.setBackground(new java.awt.Color(204, 255, 204));
 
@@ -2447,35 +2617,50 @@ public class Ventana extends javax.swing.JFrame {
         jMenuArchivos.add(jMenuItemLeerZoo);
         jMenuArchivos.add(jSeparator5);
 
-        jMenuItem1.setText("Guardar archivo animales.txt ");
-        jMenuArchivos.add(jMenuItem1);
+        jMenuItemGuardarAnimalArchivo.setText("Guardar archivo animales.txt ");
+        jMenuItemGuardarAnimalArchivo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemGuardarAnimalArchivoActionPerformed(evt);
+            }
+        });
+        jMenuArchivos.add(jMenuItemGuardarAnimalArchivo);
 
-        jMenuItem2.setText("Mostrar archivo animal.txt");
-        jMenuArchivos.add(jMenuItem2);
+        jMenuItemMostrarAnimalArchivo.setText("Mostrar archivo animal.txt");
+        jMenuItemMostrarAnimalArchivo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemMostrarAnimalArchivoActionPerformed(evt);
+            }
+        });
+        jMenuArchivos.add(jMenuItemMostrarAnimalArchivo);
 
         jMenuBar1.add(jMenuArchivos);
 
         jMenu1.setText("Salir");
 
-        jMenuItem3.setText("Salir");
-        jMenu1.add(jMenuItem3);
+        jMenuItemSalir.setText("Salir");
+        jMenuItemSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemSalirActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItemSalir);
 
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("BDD");
 
-        jMenuItem4.setText("Guardar tabla animales");
-        jMenu2.add(jMenuItem4);
+        jMenuItemGuardarTablaAnimalesBDD.setText("Guardar tabla animales");
+        jMenu2.add(jMenuItemGuardarTablaAnimalesBDD);
 
-        jMenuItem5.setText("Mostrar animales");
-        jMenu2.add(jMenuItem5);
+        jMenuItemMostrarAnimalBDD.setText("Mostrar animales");
+        jMenu2.add(jMenuItemMostrarAnimalBDD);
         jMenu2.add(jSeparator6);
 
-        jMenuItem6.setText("Guardar tabla Personal");
-        jMenu2.add(jMenuItem6);
+        jMenuItemGuardarTablaPersonalBDD.setText("Guardar tabla Personal");
+        jMenu2.add(jMenuItemGuardarTablaPersonalBDD);
 
-        jMenuItem7.setText("Mostrar personal");
-        jMenu2.add(jMenuItem7);
+        jMenuItemMostrarPersonalBDD.setText("Mostrar personal");
+        jMenu2.add(jMenuItemMostrarPersonalBDD);
 
         jMenuBar1.add(jMenu2);
 
@@ -3370,6 +3555,49 @@ public class Ventana extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jComboBoxNumeroVisitasMesActionPerformed
 
+    private void jMenuItemMostrarAnimalArchivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemMostrarAnimalArchivoActionPerformed
+        Archivos archi = new Archivos();
+        int seleccion = this.jFileChooserArchivos.showOpenDialog(this);
+        
+        if(seleccion == jFileChooserArchivos.APPROVE_OPTION){
+            File elegido = this.jFileChooserArchivos.getSelectedFile();
+            
+            try{
+                archi.mostrarAnimalCuidador(elegido, jTextAreaMostrarAnimalCuidadores);
+                this.jLabelEstado.setText("Contenido mostrado");
+            }catch(IOException e){
+                this.jLabelEstado.setText("Error al leer el archivo");
+            }
+        }else{
+            this.jLabelEstado.setText("No se selecciono nada");
+        } 
+        
+       
+    }//GEN-LAST:event_jMenuItemMostrarAnimalArchivoActionPerformed
+
+    private void jMenuItemGuardarAnimalArchivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemGuardarAnimalArchivoActionPerformed
+        Archivos archi = new Archivos();
+        
+        int seleccion = this.jFileChooserArchivos.showSaveDialog(this);
+        
+        if(seleccion == jFileChooserArchivos.APPROVE_OPTION){
+            File archivoElegido = this.jFileChooserArchivos.getSelectedFile();
+            
+            try{
+                archi.guardarAnimalCuidador(archivoElegido, this.miZoo);
+                this.jLabelEstado.setText("Archivo guardado correctamnete");
+            }catch(IOException e){
+                this.jLabelEstado.setText("Error al guardar el archivo");
+            }
+        }else{
+            this.jLabelEstado.setText("No se selecciono nada");
+        }
+    }//GEN-LAST:event_jMenuItemGuardarAnimalArchivoActionPerformed
+
+    private void jMenuItemSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSalirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jMenuItemSalirActionPerformed
+
     
     
     /**
@@ -3520,6 +3748,9 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelTitulozooDeDatosHabitatN23;
     private javax.swing.JLabel jLabelTitulozooDeDatosHabitatN24;
     private javax.swing.JLabel jLabelTitulozooDeDatosHabitatN25;
+    private javax.swing.JLabel jLabelTitulozooDeDatosHabitatN26;
+    private javax.swing.JLabel jLabelTitulozooDeDatosHabitatN27;
+    private javax.swing.JLabel jLabelTitulozooDeDatosHabitatN28;
     private javax.swing.JLabel jLabelTitulozooDeDatosHabitatN3;
     private javax.swing.JLabel jLabelTitulozooDeDatosHabitatN4;
     private javax.swing.JLabel jLabelTitulozooDeDatosHabitatN5;
@@ -3534,23 +3765,26 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenuArchivos;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItemGuardarAnimalArchivo;
+    private javax.swing.JMenuItem jMenuItemGuardarTablaAnimalesBDD;
+    private javax.swing.JMenuItem jMenuItemGuardarTablaPersonalBDD;
     private javax.swing.JMenuItem jMenuItemGuardarZoo;
     private javax.swing.JMenuItem jMenuItemLeerZoo;
+    private javax.swing.JMenuItem jMenuItemMostrarAnimalArchivo;
+    private javax.swing.JMenuItem jMenuItemMostrarAnimalBDD;
+    private javax.swing.JMenuItem jMenuItemMostrarPersonalBDD;
+    private javax.swing.JMenuItem jMenuItemSalir;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanelBDDAnimalesEmpleados;
     private javax.swing.JPanel jPanelGestionAnimal;
+    private javax.swing.JPanel jPanelGestionHabitat;
+    private javax.swing.JPanel jPanelGestionPersonal;
+    private javax.swing.JPanel jPanelGestionVisitas;
     private javax.swing.JPanel jPanelGestionZoo;
     private javax.swing.JPanel jPanelInicio;
     private javax.swing.JPanel jPanelIntroducirDatosAnimales;
@@ -3561,6 +3795,8 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelIntroducirDatosHabitat2;
     private javax.swing.JPanel jPanelIntroducirDatosHabitat3;
     private javax.swing.JPanel jPanelIntroducirDatosZoo;
+    private javax.swing.JPanel jPanelMostrarAnimales;
+    private javax.swing.JPanel jPanelOtrasGestiones;
     private javax.swing.JPanel jPanelVerAnimal;
     private javax.swing.JPanel jPanelVerZoo;
     private javax.swing.JRadioButton jRadioButtonAdministrativoPersonal;
@@ -3586,6 +3822,9 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButtonVerNoche;
     private javax.swing.JRadioButton jRadioButtonVerTarde;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
@@ -3597,6 +3836,9 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JSpinner jSpinnerNumeroVisitantes;
     private javax.swing.JSpinner jSpinnerVerNumeroDeAnimalesHabitat;
     private javax.swing.JTabbedPane jTabbedPanel1;
+    private javax.swing.JTextArea jTextAreaDatosAnimalesBDD;
+    private javax.swing.JTextArea jTextAreaDatosEmpleadosBDD;
+    private javax.swing.JTextArea jTextAreaMostrarAnimalCuidadores;
     private javax.swing.JTextArea jTextAreaVerZooCompleto;
     private javax.swing.JTextField jTextFieldArchivoImagenAnimal;
     private javax.swing.JTextField jTextFieldCapacidadHabitat;
