@@ -79,15 +79,31 @@
             <Property name="text" type="java.lang.String" value="BDD"/>
           </Properties>
           <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItemCrearBaseDeDatos">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Crear Base de Datos"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItemCrearBaseDeDatosActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator7">
+            </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItemGuardarTablaAnimalesBDD">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Guardar tabla animales"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItemGuardarTablaAnimalesBDDActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItemMostrarAnimalBDD">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Mostrar animales"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItemMostrarAnimalBDDActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator6">
             </MenuItem>
@@ -95,11 +111,17 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Guardar tabla Personal"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItemGuardarTablaPersonalBDDActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItemMostrarPersonalBDD">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Mostrar personal"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItemMostrarPersonalBDDActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>

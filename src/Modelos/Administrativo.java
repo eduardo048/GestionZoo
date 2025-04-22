@@ -36,5 +36,9 @@ public class Administrativo extends Personal implements Serializable {
        return texto;
     }
     
+    public String getAtributoExtra(){
+        return departamento;
+    }
+    
     
 }

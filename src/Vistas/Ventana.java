@@ -5,6 +5,7 @@
 package Vistas;
 
 import Controladores.Archivos;
+import Controladores.ConexionBBDD;
 import Modelos.Administrativo;
 import Modelos.Zoo;
 import Modelos.Animal;
@@ -29,8 +30,11 @@ import javax.swing.ImageIcon;
  */
 public class Ventana extends javax.swing.JFrame {
     private Zoo miZoo=null;
+    private ConexionBBDD bbdd;
+    
     public Ventana() {
         initComponents();
+        this.bbdd = new ConexionBBDD(this.jLabelEstado);
     }
 
     
@@ -276,6 +280,8 @@ public class Ventana extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenuItemSalir = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        jMenuItemCrearBaseDeDatos = new javax.swing.JMenuItem();
+        jSeparator7 = new javax.swing.JPopupMenu.Separator();
         jMenuItemGuardarTablaAnimalesBDD = new javax.swing.JMenuItem();
         jMenuItemMostrarAnimalBDD = new javax.swing.JMenuItem();
         jSeparator6 = new javax.swing.JPopupMenu.Separator();
@@ -2649,17 +2655,46 @@ public class Ventana extends javax.swing.JFrame {
 
         jMenu2.setText("BDD");
 
+        jMenuItemCrearBaseDeDatos.setText("Crear Base de Datos");
+        jMenuItemCrearBaseDeDatos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemCrearBaseDeDatosActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItemCrearBaseDeDatos);
+        jMenu2.add(jSeparator7);
+
         jMenuItemGuardarTablaAnimalesBDD.setText("Guardar tabla animales");
+        jMenuItemGuardarTablaAnimalesBDD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemGuardarTablaAnimalesBDDActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItemGuardarTablaAnimalesBDD);
 
         jMenuItemMostrarAnimalBDD.setText("Mostrar animales");
+        jMenuItemMostrarAnimalBDD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemMostrarAnimalBDDActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItemMostrarAnimalBDD);
         jMenu2.add(jSeparator6);
 
         jMenuItemGuardarTablaPersonalBDD.setText("Guardar tabla Personal");
+        jMenuItemGuardarTablaPersonalBDD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemGuardarTablaPersonalBDDActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItemGuardarTablaPersonalBDD);
 
         jMenuItemMostrarPersonalBDD.setText("Mostrar personal");
+        jMenuItemMostrarPersonalBDD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemMostrarPersonalBDDActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItemMostrarPersonalBDD);
 
         jMenuBar1.add(jMenu2);
@@ -3598,6 +3633,30 @@ public class Ventana extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jMenuItemSalirActionPerformed
 
+    private void jMenuItemCrearBaseDeDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCrearBaseDeDatosActionPerformed
+        this.bbdd.crearTablas(this.jLabelEstado);
+    }//GEN-LAST:event_jMenuItemCrearBaseDeDatosActionPerformed
+
+    private void jMenuItemGuardarTablaAnimalesBDDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemGuardarTablaAnimalesBDDActionPerformed
+        ArrayList<Animal> listaAnimales = this.miZoo.getAnimales();
+        this.bbdd.guardarTodosLosAnimales(listaAnimales, this.jLabelEstado);
+    }//GEN-LAST:event_jMenuItemGuardarTablaAnimalesBDDActionPerformed
+
+    private void jMenuItemGuardarTablaPersonalBDDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemGuardarTablaPersonalBDDActionPerformed
+        ArrayList<Personal> listaPersonal = this.miZoo.getPersonal();
+        this.bbdd.guardarTodoElPersonal(listaPersonal, this.jLabelEstado);
+    }//GEN-LAST:event_jMenuItemGuardarTablaPersonalBDDActionPerformed
+
+    private void jMenuItemMostrarAnimalBDDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemMostrarAnimalBDDActionPerformed
+        String datosAnimales = this.bbdd.obtenerTodosLosAnimales();
+        this.jTextAreaDatosAnimalesBDD.setText(datosAnimales);
+    }//GEN-LAST:event_jMenuItemMostrarAnimalBDDActionPerformed
+
+    private void jMenuItemMostrarPersonalBDDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemMostrarPersonalBDDActionPerformed
+        String datosPersonal = this.bbdd.obtenerTodoElPersonal();
+        this.jTextAreaDatosEmpleadosBDD.setText(datosPersonal);
+    }//GEN-LAST:event_jMenuItemMostrarPersonalBDDActionPerformed
+
     
     
     /**
@@ -3765,6 +3824,7 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenuArchivos;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItemCrearBaseDeDatos;
     private javax.swing.JMenuItem jMenuItemGuardarAnimalArchivo;
     private javax.swing.JMenuItem jMenuItemGuardarTablaAnimalesBDD;
     private javax.swing.JMenuItem jMenuItemGuardarTablaPersonalBDD;
@@ -3831,6 +3891,7 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JPopupMenu.Separator jSeparator5;
     private javax.swing.JPopupMenu.Separator jSeparator6;
+    private javax.swing.JPopupMenu.Separator jSeparator7;
     private javax.swing.JSlider jSliderEdadAnimal;
     private javax.swing.JSpinner jSpinnerNumeroDeAnimalesHabitat;
     private javax.swing.JSpinner jSpinnerNumeroVisitantes;

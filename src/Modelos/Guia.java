@@ -32,7 +32,11 @@ public class Guia extends Personal implements Serializable {
     @Override
     public String toString() {
         return getNombre();
-}
+    }
+    
+    public String getAtributoExtra(){
+        return idioma;
+    }
 
     
 }

@@ -36,6 +36,10 @@ public class Cuidador extends Personal implements Serializable {
        return texto; 
     }  
     
+    public String getAtributoExtra(){
+        return String.valueOf(experiencia);
+    }
+    
     
     
 }

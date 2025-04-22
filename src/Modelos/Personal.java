@@ -4,7 +4,7 @@ package Modelos;
 import java.io.Serializable;
 
 
-public class Personal implements Serializable {
+public abstract class Personal implements Serializable {
     private String nombre;
     private String horario;
     private double sueldo;
@@ -47,7 +47,8 @@ public class Personal implements Serializable {
         
         String texto =  nombre + " | Horario: " + horario + " | Sueldo: " + sueldo + "?";
         return texto; 
-    
     }
+    
+    public abstract String getAtributoExtra();
     
 }

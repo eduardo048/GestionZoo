@@ -35,7 +35,11 @@ public class Limpiador extends Personal implements Serializable{
                        "\n Área de Limpieza: " + " | Área: " + area;
         
         return texto;
-    }  
+    } 
+    
+    public String getAtributoExtra(){
+        return area;
+    }
 
     
     
