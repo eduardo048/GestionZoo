@@ -322,5 +322,56 @@ public class Zoo  implements Serializable {
         }
         return contador;
     }
+    
+    //Informacion por defecto
+    public void cargarDatosPorDefecto() {
+        // ====== ANIMALES ======
+        Animal leon = new Animal("Simba", "León", 8, "Carnívoro", "tigre.jpg");
+        Animal elefante = new Animal("Dumbo", "Elefante", 15, "Herbívoro", "jirafa.jpg");
+        Animal mono = new Animal("Chita", "Mono", 5, "Omnívoro", "mono.jpg");
+
+        this.anadirAnimal(leon);
+        this.anadirAnimal(elefante);
+        this.anadirAnimal(mono);
+
+        // ====== HABITATS ======
+        Habitat sabana = new Habitat("Sabana Africana", "Cálido", 1000, 5, 0);
+        Habitat jungla = new Habitat("Jungla Tropical", "Húmedo", 800, 4, 0);
+
+        this.añadirHabitat(sabana);
+        this.añadirHabitat(jungla);
+
+        // Asignar hábitats
+        leon.setHabitat(sabana);
+        elefante.setHabitat(sabana);
+        mono.setHabitat(jungla);
+
+        sabana.setNumeroAnimales(2);
+        jungla.setNumeroAnimales(1);
+
+        // ====== PERSONAL ======
+        Administrativo admin = new Administrativo("Laura", "Mañana", 1800, "Contabilidad");
+        Cuidador cuidador = new Cuidador("Pedro", "Tarde", 2000, 5);
+        Guia guia = new Guia("Carlos", "Mañana", 1900, "Inglés");
+        Limpiador limpiador = new Limpiador("Sonia", "Noche", 1600, "Zonas húmedas");
+
+        this.añadirPersonal(admin);
+        this.añadirPersonal(cuidador);
+        this.añadirPersonal(guia);
+        this.añadirPersonal(limpiador);
+
+        // Asignar cuidador a los animales
+        leon.setCuidador(cuidador);
+        elefante.setCuidador(cuidador);
+        mono.setCuidador(cuidador);
+
+        // ====== VISITAS ======
+        Visitas visita1 = new Visitas(LocalDate.of(2024, 5, 1), 30, guia, "Recorrido por la sabana");
+        Visitas visita2 = new Visitas(LocalDate.of(2024, 6, 15), 20, guia, "Exploración de la jungla");
+
+        this.añadirVisita(visita1);
+        this.añadirVisita(visita2);
+    }
+
    
 }

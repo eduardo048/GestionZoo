@@ -63,6 +63,7 @@ public class Ventana extends javax.swing.JFrame {
         jTextFieldSuperficieZoo = new javax.swing.JTextField();
         jComboBoxCiudadesZoo = new javax.swing.JComboBox<>();
         jButtonCrearZooBoton = new javax.swing.JButton();
+        jButtonAñadirDatosPorDefectoAlZoo = new javax.swing.JButton();
         jPanelVerZoo = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -371,22 +372,18 @@ public class Ventana extends javax.swing.JFrame {
             }
         });
 
+        jButtonAñadirDatosPorDefectoAlZoo.setFont(new java.awt.Font("Segoe Script", 3, 12)); // NOI18N
+        jButtonAñadirDatosPorDefectoAlZoo.setText("Añadir datos por defecto");
+        jButtonAñadirDatosPorDefectoAlZoo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAñadirDatosPorDefectoAlZooActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelIntroducirDatosZooLayout = new javax.swing.GroupLayout(jPanelIntroducirDatosZoo);
         jPanelIntroducirDatosZoo.setLayout(jPanelIntroducirDatosZooLayout);
         jPanelIntroducirDatosZooLayout.setHorizontalGroup(
             jPanelIntroducirDatosZooLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelIntroducirDatosZooLayout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addGroup(jPanelIntroducirDatosZooLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabelSuperficieZoo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabelCiudadZoo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabelNombreZoo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanelIntroducirDatosZooLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jComboBoxCiudadesZoo, 0, 179, Short.MAX_VALUE)
-                    .addComponent(jTextFieldSuperficieZoo)
-                    .addComponent(jTextFieldNombreZoo))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelIntroducirDatosZooLayout.createSequentialGroup()
                 .addContainerGap(53, Short.MAX_VALUE)
                 .addGroup(jPanelIntroducirDatosZooLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -396,6 +393,23 @@ public class Ventana extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelIntroducirDatosZooLayout.createSequentialGroup()
                         .addComponent(jButtonCrearZooBoton)
                         .addGap(101, 101, 101))))
+            .addGroup(jPanelIntroducirDatosZooLayout.createSequentialGroup()
+                .addGroup(jPanelIntroducirDatosZooLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelIntroducirDatosZooLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addGroup(jPanelIntroducirDatosZooLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabelSuperficieZoo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabelCiudadZoo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabelNombreZoo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanelIntroducirDatosZooLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jComboBoxCiudadesZoo, 0, 179, Short.MAX_VALUE)
+                            .addComponent(jTextFieldSuperficieZoo)
+                            .addComponent(jTextFieldNombreZoo)))
+                    .addGroup(jPanelIntroducirDatosZooLayout.createSequentialGroup()
+                        .addGap(73, 73, 73)
+                        .addComponent(jButtonAñadirDatosPorDefectoAlZoo)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelIntroducirDatosZooLayout.setVerticalGroup(
             jPanelIntroducirDatosZooLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -416,6 +430,8 @@ public class Ventana extends javax.swing.JFrame {
                     .addComponent(jComboBoxCiudadesZoo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(57, 57, 57)
                 .addComponent(jButtonCrearZooBoton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButtonAñadirDatosPorDefectoAlZoo)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -550,7 +566,7 @@ public class Ventana extends javax.swing.JFrame {
                 .addGroup(jPanelGestionZooLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanelIntroducirDatosZoo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanelVerZoo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         jTabbedPanel1.addTab("Zoo", jPanelGestionZoo);
@@ -3657,6 +3673,37 @@ public class Ventana extends javax.swing.JFrame {
         this.jTextAreaDatosEmpleadosBDD.setText(datosPersonal);
     }//GEN-LAST:event_jMenuItemMostrarPersonalBDDActionPerformed
 
+    private void jButtonAñadirDatosPorDefectoAlZooActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAñadirDatosPorDefectoAlZooActionPerformed
+       this.miZoo = new Zoo("Zoo JavaZoo",10000, "Barcelona");
+        this.miZoo.cargarDatosPorDefecto();
+        
+        this.jTextFieldVeerNombreZoo.setText(miZoo.getNombreZoo());
+        this.jTextFieldVerSuperficieZoo.setText(String.valueOf(miZoo.getSuperficie()));
+        this.jComboBoxVerCiudadZoo.setSelectedItem(miZoo.getCiudad());
+        
+        for(Animal ani : this.miZoo.getAnimales()){
+            this.jComboBoxAnimalesParaModificar.addItem(ani.getNombreAnimal());
+            this.jComboBoxAnimalesAsiganarHabitat.addItem(ani.getNombreAnimal());
+        }
+
+        for(Habitat habi : this.miZoo.getHabitats()) {
+            this.jComboBoxVerHabitat.addItem(habi.getNombre());
+            this.jComboBoxHabitatGestionGeneral.addItem(habi.getNombre());
+            this.jComboBoxHabitatParaElNumeroAnimales.addItem(habi.getNombre());
+        }
+        
+        for(Personal p : this.miZoo.getPersonal()){
+            this.jComboBoxVerPersonal.addItem(p.getNombre());
+            if(p instanceof Cuidador){
+                this.jComboBoxCuidadoresParaModificar.addItem((Cuidador) p);
+            }
+            if(p instanceof Guia){
+                this.jComboBoxNombreGuiaVisita.addItem((Guia) p);
+            }
+        }
+        this.jLabelEstado.setText("Se ha creado el zoológico por defecto.");
+    }//GEN-LAST:event_jButtonAñadirDatosPorDefectoAlZooActionPerformed
+
     
     
     /**
@@ -3701,6 +3748,7 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroupVerPersonalHorario;
     private javax.swing.ButtonGroup buttonGroupVerTipoDePersonal;
     private javax.swing.JButton jButtonAñadirAnimalHabitat;
+    private javax.swing.JButton jButtonAñadirDatosPorDefectoAlZoo;
     private javax.swing.JButton jButtonBuscarVisita;
     private javax.swing.JButton jButtonCrearAnimal;
     private javax.swing.JButton jButtonCrearHabitat;
