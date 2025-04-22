@@ -4,10 +4,7 @@
  */
 package Controladores;
 import Modelos.Animal;
-import Modelos.Cuidador;
-import Modelos.Habitat;
 import Modelos.Personal;
-import Modelos.Zoo;
 import java.sql.Statement;
 import java.sql.PreparedStatement;
 import java.sql.Connection;
