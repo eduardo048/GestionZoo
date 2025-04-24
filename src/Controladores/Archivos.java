@@ -22,9 +22,7 @@ public class Archivos {
     //Constructor
     public Archivos() {
     }
-    
-    
-    
+  
     //Metodo para guardar el archivo binario que contiene todo el objeto zoo
     public void guardarZoo(File fichero, Zoo zoo) throws FileNotFoundException, IOException{
         
