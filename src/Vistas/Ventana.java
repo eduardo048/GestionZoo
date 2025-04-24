@@ -3037,7 +3037,7 @@ public class Ventana extends javax.swing.JFrame {
         int numeroAnimales = (int) this.jSpinnerNumeroDeAnimalesHabitat.getValue();
         
         Habitat nuevoHabitat = new Habitat(nombreHabitat, clima, tamaño, capacidad, numeroAnimales);
-        this.miZoo.añadirHabitat(nuevoHabitat);
+        
         
         if(this.miZoo==null){
             this.jLabelEstado.setText("Aun no se ha creado el habitat.");
