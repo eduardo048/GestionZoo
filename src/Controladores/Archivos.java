@@ -2,6 +2,8 @@
 package Controladores;
 
 import Modelos.Animal;
+import Modelos.Conductor;
+import Modelos.VisitaConVehiculo;
 import Modelos.Zoo;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -14,6 +16,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import javax.swing.JTextArea;
 
@@ -98,6 +101,36 @@ public class Archivos {
         
         areaTexto.setText(contenido.toString());
         
+    }
+    
+     public void guardarVisitas(File fichero, Zoo zoo) throws IOException{
+        
+        if(!fichero.exists()){
+            fichero.createNewFile();
+        }
+        
+        
+        BufferedWriter  bw = new BufferedWriter (new FileWriter(fichero));
+        ArrayList<VisitaConVehiculo> visita = zoo.getVisitaVehiculo();
+        
+        for(VisitaConVehiculo vis : visita){
+            LocalDate fecha =  vis.getFecha();
+            int visitantes = vis.getnVisitantes();
+            int numeroBicicletas = vis.getNbicicletas();
+            String tipo = vis.getTipo();
+            int numeroPlazas = vis.getnVisitantes();
+           /* Conductor nombre = nombre.getNombre();*/
+            if(vis.getTipo() == "Bicicletas" + numeroBicicletas){
+                bw.write("Fecha" + fecha + "Visitantes: " + visitantes + "Bicicletas:  " + numeroBicicletas + "Tipo" + tipo ); 
+            }else{
+
+               bw.write("Fecha" + fecha + "Visitantes: " + visitantes + "Coche numero plazas :  " + numeroPlazas + "Conductor" + tipo ); 
+            }
+            
+            bw.newLine();
+        }
+        bw.close();
+         
     }
   
 }

@@ -13,6 +13,8 @@ public class Zoo  implements Serializable {
     private ArrayList<Habitat> habitats;
     private ArrayList<Personal> personal;
     private ArrayList<Visitas> visitas;
+    private ArrayList<VisitaConVehiculo> visitaVehiculo;
+    private ArrayList<Vehiculo> vehiculo;
     
     //Constructor vacio
     public Zoo() {
@@ -27,6 +29,8 @@ public class Zoo  implements Serializable {
         this.habitats = new ArrayList<Habitat>();
         this.personal = new ArrayList<Personal>();
         this.visitas = new ArrayList<Visitas>();
+        this.visitaVehiculo = new ArrayList<VisitaConVehiculo>();
+        this.vehiculo = new ArrayList<Vehiculo>();
     }
     
     //Setters and Getters
@@ -85,9 +89,22 @@ public class Zoo  implements Serializable {
     public void setVisitas(ArrayList<Visitas> visitas) {
         this.visitas = visitas;
     }
-    
-    
-    
+
+    public ArrayList<VisitaConVehiculo> getVisitaVehiculo() {
+        return visitaVehiculo;
+    }
+
+    public void setVisitaVehiculo(ArrayList<VisitaConVehiculo> visitaVehiculo) {
+        this.visitaVehiculo = visitaVehiculo;
+    }
+
+    public ArrayList<Vehiculo> getVehiculo() {
+        return vehiculo;
+    }
+
+    public void setVehiculo(ArrayList<Vehiculo> vehiculo) {
+        this.vehiculo = vehiculo;
+    }
     
     
 
@@ -102,6 +119,8 @@ public class Zoo  implements Serializable {
         texto += this.habitats.toString();
         texto += this.personal.toString();
         texto += this.visitas.toString();
+        texto += this.visitaVehiculo.toString();
+        texto += this.vehiculo.toString();
         return texto;
     }
     
@@ -203,6 +222,17 @@ public class Zoo  implements Serializable {
         }
         return cuidadores;
     }
+    //Buscar solo conductor
+    public ArrayList<Conductor> getConductores(){
+        ArrayList<Conductor> conductor = new ArrayList<>();
+        for(int i=0; i<personal.size(); i++){
+            Personal per = personal.get(i);
+            if(per instanceof Conductor){
+                conductor.add((Conductor) per);
+            }
+        }
+        return conductor;
+    }
     
     
     //TODO SOBRE LAS VISITAS
@@ -247,6 +277,17 @@ public class Zoo  implements Serializable {
         return resultado;
     }
     
+    //TODO SOBRE VIISTASCONVEHICULO
+    //Añadir una visitaConVehiculo
+    public void añadirVisitaConVehiculo(VisitaConVehiculo nueva){
+        this.visitaVehiculo.add(nueva);
+    }
+   
+    
+    //TODO SOBRE VEHICULO
+    public void añadirVehiculo(Vehiculo nueva){
+        this.vehiculo.add(nueva);
+    }
     
     //OTRAS GESTIONES
     

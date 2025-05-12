@@ -5,6 +5,7 @@
 package Controladores;
 import Modelos.Animal;
 import Modelos.Personal;
+import Modelos.Vehiculo;
 import java.sql.Statement;
 import java.sql.PreparedStatement;
 import java.sql.Connection;
@@ -162,6 +163,56 @@ public class ConexionBBDD {
         }
         return texto;
     }
+    
+    //Guardar Vehiculo
+    public void crearTablaVehiculo(JLabel estado) {
+        try{
+            Statement stmt = this.conexion.createStatement();
+
+            // Tabla PERSONAL
+            
+
+            // Tabla ANIMALES con cuidador y habitat opcionales
+            String tablaVehiculo = "CREATE TABLE `bbddedupico`" +
+                    ".`conductor` (`Matricula` INT(20) NOT NULL AUTO_INCREMENT ," +
+                    "`PrecioAlquiler` INT(30) NOT NULL , " +
+                    " `Tipo` VARCHAR(50) NOT NULL ," +
+                    "`NPlazas` INT(15) NOT NULL ," +
+                    "`Conductor` VARCHAR(23) NOT NULL ," +
+                    "PRIMARY KEY (`Matricula`)) ENGINE = InnoDB";
+
+            stmt.execute(tablaVehiculo);
+
+            estado.setText("Tablas vehiculo creada");
+
+        }catch(SQLException ex){
+            estado.setText("Error al crear la tablas: " + ex.getMessage());
+        }
+    }
+    
+    public void guardarVehiculos(ArrayList<Vehiculo> listaVehiculos, JLabel estado) {
+        String orden = "INSERT INTO personal (matricula, precioAlquiler, Tipo, NPlazas, Conductor) VALUES (?,?,?,?,?,?);";
+
+        try{
+            this.sentenciaPreparada = this.conexion.prepareStatement(orden);
+
+            /*for(Vehiculo veh : listaVehiculos){
+                this.sentenciaPreparada.setString(1, veh.getMatricula());
+                this.sentenciaPreparada.setString(2, veh.getPreAlquiler());
+                this.sentenciaPreparada.setDouble(3, );
+                this.sentenciaPreparada.setString(4, veh.getAtributoExtra());
+                this.sentenciaPreparada.executeUpdate();
+            } */
+
+            estado.setText("Se ha guardado todo el personal.");
+
+        }catch (SQLException ex) {
+            estado.setText("Error al guardar el personal: " + ex.getMessage());
+        }
+    }
+    
+    
+    
 
 
 
